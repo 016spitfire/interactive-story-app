@@ -1,0 +1,66 @@
+.choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+.choice-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.choice-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(102, 126, 234, 0.6);
+  transform: translateX(4px);
+}
+
+.choice-button:active:not(:disabled) {
+  transform: translateX(2px);
+}
+
+.choice-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.choice-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.choice-arrow {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.choice-button:hover:not(:disabled) .choice-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .choice-buttons {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .choice-button {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
