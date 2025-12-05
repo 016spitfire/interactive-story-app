@@ -46,11 +46,15 @@ function StoryContainer({ story }) {
 
   if (!currentNode) {
     return (
-      <div className="story-container">
+      <div className="story-container" role="main" aria-live="polite">
         <div className="story-loading">Loading story...</div>
       </div>
     );
   }
+
+  const progressPercent = Math.round(
+    (visitedNodes.length / Object.keys(story.nodes).length) * 100,
+  );
 
   return (
     <div className="story-container">
@@ -59,7 +63,7 @@ function StoryContainer({ story }) {
         <p className="story-author">by {story.author}</p>
       </header>
 
-      <main className="story-main">
+      <main className="story-main" role="main" aria-live="polite">
         <StoryDisplay node={currentNode} />
 
         {!currentNode.isEnding && (
@@ -71,15 +75,22 @@ function StoryContainer({ story }) {
 
         {currentNode.isEnding && (
           <div className="story-actions">
-            <button className="restart-button" onClick={handleRestart}>
+            <button
+              className="restart-button"
+              onClick={handleRestart}
+              aria-label="Restart the story from the beginning"
+            >
               Start New Story
             </button>
           </div>
         )}
       </main>
 
-      <footer className="story-footer">
-        <div className="progress-info">
+      <footer className="story-footer" role="contentinfo">
+        <div
+          className="progress-info"
+          aria-label={`Story progress: ${visitedNodes.length} out of ${Object.keys(story.nodes).length} nodes visited, ${progressPercent} percent complete`}
+        >
           Nodes visited: {visitedNodes.length} /{" "}
           {Object.keys(story.nodes).length}
         </div>

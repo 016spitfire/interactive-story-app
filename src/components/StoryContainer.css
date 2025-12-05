@@ -3,6 +3,15 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.2rem;
+  color: #999;
 }
 
 .story-header {
@@ -10,6 +19,16 @@
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .story-title {
@@ -20,6 +39,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .story-author {
@@ -39,6 +59,19 @@
   display: flex;
   justify-content: center;
   padding: 2rem;
+  animation: fadeInScale 0.6s ease 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .restart-button {
@@ -52,6 +85,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 48px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .restart-button:hover {
@@ -60,7 +96,12 @@
 }
 
 .restart-button:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
+}
+
+.restart-button:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.8);
+  outline-offset: 2px;
 }
 
 .story-footer {
@@ -73,11 +114,12 @@
 .progress-info {
   font-size: 0.9rem;
   color: #999;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
   .story-container {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 0.75rem;
   }
 
   .story-header {
@@ -89,7 +131,52 @@
     font-size: 2rem;
   }
 
+  .story-author {
+    font-size: 0.9rem;
+  }
+
   .story-main {
     gap: 1.5rem;
+  }
+
+  .story-actions {
+    padding: 1.5rem 1rem;
+  }
+
+  .restart-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .story-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .story-title {
+    font-size: 1.75rem;
+  }
+
+  .story-actions {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-header,
+  .story-actions {
+    animation: none;
+    opacity: 1;
+  }
+
+  .restart-button:hover,
+  .restart-button:active {
+    transform: none;
   }
 }
