@@ -16,11 +16,12 @@ function App() {
   };
 
   const handleBackToMenu = () => {
-    dispatch(clearProgress());
+    // Just clear the current story selection, keep all progress saved
     setSelectedStory(null);
   };
 
   const handleErrorReset = () => {
+    // On error, clear everything and reset
     dispatch(clearProgress());
     setSelectedStory(null);
   };

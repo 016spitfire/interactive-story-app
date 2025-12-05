@@ -15,6 +15,7 @@ import "./StoryContainer.css";
 
 function StoryContainer({ story, onBackToMenu }) {
   const dispatch = useDispatch();
+  const currentStoryId = useSelector((state) => state.story.currentStoryId);
   const currentNodeId = useSelector(selectCurrentNodeId);
   const visitedNodes = useSelector(selectVisitedNodes);
   const [nodeError, setNodeError] = useState(null);
@@ -29,8 +30,10 @@ function StoryContainer({ story, onBackToMenu }) {
     );
   }, [dispatch, story.storyId, story.startNode]);
 
-  // Get current node safely with error handling
-  const currentNode = getSafeNode(story, currentNodeId);
+  // Only get node if Redux state matches the current story prop
+  // This prevents showing wrong story's nodes during transitions
+  const currentNode =
+    currentStoryId === story.storyId ? getSafeNode(story, currentNodeId) : null;
 
   // Check for node errors
   useEffect(() => {
