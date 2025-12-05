@@ -1,24 +1,56 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import StoryDisplay from './StoryDisplay';
-import ChoiceButtons from './ChoiceButtons';
-import './StoryContainer.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
+import StoryDisplay from "./StoryDisplay";
+import ChoiceButtons from "./ChoiceButtons";
+import {
+  startStory,
+  navigateToNode,
+  restartStory,
+  selectCurrentNodeId,
+  selectVisitedNodes,
+} from "../store/storySlice";
+import "./StoryContainer.css";
 
 function StoryContainer({ story }) {
-  const [currentNodeId, setCurrentNodeId] = useState(story.startNode);
-  const [visitedNodes, setVisitedNodes] = useState([story.startNode]);
+  const dispatch = useDispatch();
+  const currentNodeId = useSelector(selectCurrentNodeId);
+  const visitedNodes = useSelector(selectVisitedNodes);
 
-  const currentNode = story.nodes[currentNodeId];
+  // Initialize story on mount
+  useEffect(() => {
+    if (!currentNodeId) {
+      dispatch(
+        startStory({
+          storyId: story.storyId,
+          startNode: story.startNode,
+        }),
+      );
+    }
+  }, [dispatch, currentNodeId, story.storyId, story.startNode]);
+
+  const currentNode = currentNodeId ? story.nodes[currentNodeId] : null;
 
   const handleChoiceSelect = (nextNodeId) => {
-    setCurrentNodeId(nextNodeId);
-    setVisitedNodes(prev => [...prev, nextNodeId]);
+    dispatch(navigateToNode(nextNodeId));
   };
 
   const handleRestart = () => {
-    setCurrentNodeId(story.startNode);
-    setVisitedNodes([story.startNode]);
+    dispatch(
+      restartStory({
+        storyId: story.storyId,
+        startNode: story.startNode,
+      }),
+    );
   };
+
+  if (!currentNode) {
+    return (
+      <div className="story-container">
+        <div className="story-loading">Loading story...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="story-container">
@@ -48,7 +80,8 @@ function StoryContainer({ story }) {
 
       <footer className="story-footer">
         <div className="progress-info">
-          Nodes visited: {visitedNodes.length} / {Object.keys(story.nodes).length}
+          Nodes visited: {visitedNodes.length} /{" "}
+          {Object.keys(story.nodes).length}
         </div>
       </footer>
     </div>
@@ -61,8 +94,8 @@ StoryContainer.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     startNode: PropTypes.string.isRequired,
-    nodes: PropTypes.object.isRequired
-  }).isRequired
+    nodes: PropTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default StoryContainer;
