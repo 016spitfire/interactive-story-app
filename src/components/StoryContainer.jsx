@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import StoryDisplay from "./StoryDisplay";
@@ -10,12 +10,14 @@ import {
   selectCurrentNodeId,
   selectVisitedNodes,
 } from "../store/storySlice";
+import { getSafeNode } from "../utils/storyValidation";
 import "./StoryContainer.css";
 
 function StoryContainer({ story, onBackToMenu }) {
   const dispatch = useDispatch();
   const currentNodeId = useSelector(selectCurrentNodeId);
   const visitedNodes = useSelector(selectVisitedNodes);
+  const [nodeError, setNodeError] = useState(null);
 
   // Initialize story on mount or when story changes
   useEffect(() => {
@@ -27,7 +29,22 @@ function StoryContainer({ story, onBackToMenu }) {
     );
   }, [dispatch, story.storyId, story.startNode]);
 
-  const currentNode = currentNodeId ? story.nodes[currentNodeId] : null;
+  // Get current node safely with error handling
+  const currentNode = getSafeNode(story, currentNodeId);
+
+  // Check for node errors
+  useEffect(() => {
+    if (currentNodeId && !currentNode) {
+      setNodeError(
+        `Story node "${currentNodeId}" not found. This story may have corrupted data.`,
+      );
+      console.error(
+        `Missing node: ${currentNodeId} in story: ${story.storyId}`,
+      );
+    } else {
+      setNodeError(null);
+    }
+  }, [currentNodeId, currentNode, story.storyId]);
 
   const handleChoiceSelect = (nextNodeId) => {
     dispatch(navigateToNode(nextNodeId));
@@ -42,6 +59,32 @@ function StoryContainer({ story, onBackToMenu }) {
     );
   };
 
+  // Show error state if node is missing
+  if (nodeError) {
+    return (
+      <div className="story-container" role="main">
+        <div className="story-error">
+          <h2>Story Error</h2>
+          <p>{nodeError}</p>
+          <div className="error-actions">
+            {onBackToMenu && (
+              <button className="error-button" onClick={onBackToMenu}>
+                Back to Stories
+              </button>
+            )}
+            <button
+              className="error-button"
+              onClick={() => window.location.reload()}
+            >
+              Reload Page
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show loading state
   if (!currentNode) {
     return (
       <div className="story-container" role="main" aria-live="polite">

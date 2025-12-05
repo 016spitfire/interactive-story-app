@@ -14,6 +14,67 @@
   color: #999;
 }
 
+.story-error {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.story-error h2 {
+  color: #ef4444;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.story-error p {
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-button {
+  padding: 0.875rem 1.5rem;
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-height: 48px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.error-button:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.6);
+  transform: translateY(-2px);
+}
+
+.error-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.error-button:focus-visible {
+  outline: 3px solid rgba(239, 68, 68, 0.8);
+  outline-offset: 2px;
+}
+
 .story-header {
   text-align: center;
   margin-bottom: 3rem;
