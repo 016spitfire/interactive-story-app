@@ -12,22 +12,20 @@ import {
 } from "../store/storySlice";
 import "./StoryContainer.css";
 
-function StoryContainer({ story }) {
+function StoryContainer({ story, onBackToMenu }) {
   const dispatch = useDispatch();
   const currentNodeId = useSelector(selectCurrentNodeId);
   const visitedNodes = useSelector(selectVisitedNodes);
 
-  // Initialize story on mount
+  // Initialize story on mount or when story changes
   useEffect(() => {
-    if (!currentNodeId) {
-      dispatch(
-        startStory({
-          storyId: story.storyId,
-          startNode: story.startNode,
-        }),
-      );
-    }
-  }, [dispatch, currentNodeId, story.storyId, story.startNode]);
+    dispatch(
+      startStory({
+        storyId: story.storyId,
+        startNode: story.startNode,
+      }),
+    );
+  }, [dispatch, story.storyId, story.startNode]);
 
   const currentNode = currentNodeId ? story.nodes[currentNodeId] : null;
 
@@ -59,6 +57,15 @@ function StoryContainer({ story }) {
   return (
     <div className="story-container">
       <header className="story-header">
+        {onBackToMenu && (
+          <button
+            className="back-to-menu-button"
+            onClick={onBackToMenu}
+            aria-label="Return to story menu"
+          >
+            ← Back to Stories
+          </button>
+        )}
         <h1 className="story-title">{story.title}</h1>
         <p className="story-author">by {story.author}</p>
       </header>
@@ -107,6 +114,7 @@ StoryContainer.propTypes = {
     startNode: PropTypes.string.isRequired,
     nodes: PropTypes.object.isRequired,
   }).isRequired,
+  onBackToMenu: PropTypes.func,
 };
 
 export default StoryContainer;

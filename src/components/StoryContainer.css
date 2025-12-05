@@ -20,6 +20,37 @@
   padding-bottom: 2rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   animation: fadeIn 0.8s ease;
+  position: relative;
+}
+
+.back-to-menu-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.back-to-menu-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(102, 126, 234, 0.6);
+  transform: translateX(-4px);
+}
+
+.back-to-menu-button:active {
+  transform: translateX(-2px);
+}
+
+.back-to-menu-button:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.8);
+  outline-offset: 2px;
 }
 
 @keyframes fadeIn {
@@ -125,6 +156,14 @@
   .story-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .back-to-menu-button {
+    position: static;
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: fit-content;
   }
 
   .story-title {
