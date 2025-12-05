@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentStoryId: null,
   storiesProgress: {},
 };
 
@@ -31,8 +30,7 @@ const storySlice = createSlice({
       state.currentStoryId = storyId;
     },
     navigateToNode: (state, action) => {
-      const nodeId = action.payload;
-      const storyId = state.currentStoryId;
+      const { storyId, nodeId } = action.payload;
 
       if (storyId && state.storiesProgress[storyId]) {
         state.storiesProgress[storyId].currentNodeId = nodeId;
@@ -44,13 +42,20 @@ const storySlice = createSlice({
     },
     restartStory: (state, action) => {
       const { storyId, startNode } = action.payload;
-      state.currentStoryId = storyId;
+      if (!state.storiesProgress) {
+        state.storiesProgress = {};
+      }
       state.storiesProgress[storyId] = {
         currentNodeId: startNode,
         visitedNodes: [startNode],
         startTime: new Date().toISOString(),
         lastUpdated: new Date().toISOString(),
       };
+      state.currentStoryId = storyId;
+    },
+    selectStory: (state, action) => {
+      const storyId = action.payload;
+      state.currentStoryId = storyId;
     },
     loadSavedProgress: (state, action) => {
       const savedState = action.payload;
@@ -63,7 +68,7 @@ const storySlice = createSlice({
       ) {
         // Old structure detected - migrate it
         return {
-          currentStoryId: savedState.currentStoryId,
+          currentStoryId: null,
           storiesProgress: {
             [savedState.currentStoryId]: {
               currentNodeId: savedState.currentNodeId,
@@ -77,7 +82,7 @@ const storySlice = createSlice({
 
       // New structure - use as-is, but ensure storiesProgress exists
       return {
-        currentStoryId: savedState.currentStoryId || null,
+        currentStoryId: null,
         storiesProgress: savedState.storiesProgress || {},
       };
     },
@@ -100,6 +105,7 @@ export const {
   startStory,
   navigateToNode,
   restartStory,
+  selectStory,
   loadSavedProgress,
   clearProgress,
   clearStoryProgress,

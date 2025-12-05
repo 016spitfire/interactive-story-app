@@ -7,33 +7,38 @@ import {
   startStory,
   navigateToNode,
   restartStory,
+  selectCurrentStoryId,
   selectCurrentNodeId,
   selectVisitedNodes,
 } from "../store/storySlice";
 import { getSafeNode } from "../utils/storyValidation";
+import { stories } from "../data/stories";
 import "./StoryContainer.css";
 
-function StoryContainer({ story, onBackToMenu }) {
+function StoryContainer({ onBackToMenu }) {
   const dispatch = useDispatch();
-  const currentStoryId = useSelector((state) => state.story.currentStoryId);
+  const currentStoryId = useSelector(selectCurrentStoryId);
   const currentNodeId = useSelector(selectCurrentNodeId);
   const visitedNodes = useSelector(selectVisitedNodes);
   const [nodeError, setNodeError] = useState(null);
 
-  // Initialize story on mount or when story changes
-  useEffect(() => {
-    dispatch(
-      startStory({
-        storyId: story.storyId,
-        startNode: story.startNode,
-      }),
-    );
-  }, [dispatch, story.storyId, story.startNode]);
+  // Find the story object from the stories array using Redux currentStoryId
+  const story = stories.find((s) => s.storyId === currentStoryId);
 
-  // Only get node if Redux state matches the current story prop
-  // This prevents showing wrong story's nodes during transitions
-  const currentNode =
-    currentStoryId === story.storyId ? getSafeNode(story, currentNodeId) : null;
+  // Initialize story on mount or when story ID changes
+  useEffect(() => {
+    if (story && currentStoryId) {
+      dispatch(
+        startStory({
+          storyId: story.storyId,
+          startNode: story.startNode,
+        }),
+      );
+    }
+  }, [dispatch, currentStoryId, story]);
+
+  // Get current node safely with error handling
+  const currentNode = story ? getSafeNode(story, currentNodeId) : null;
 
   // Check for node errors
   useEffect(() => {
@@ -50,17 +55,30 @@ function StoryContainer({ story, onBackToMenu }) {
   }, [currentNodeId, currentNode, story.storyId]);
 
   const handleChoiceSelect = (nextNodeId) => {
-    dispatch(navigateToNode(nextNodeId));
+    if (story) {
+      dispatch(navigateToNode({ storyId: story.storyId, nodeId: nextNodeId }));
+    }
   };
 
   const handleRestart = () => {
-    dispatch(
-      restartStory({
-        storyId: story.storyId,
-        startNode: story.startNode,
-      }),
-    );
+    if (story) {
+      dispatch(
+        restartStory({
+          storyId: story.storyId,
+          startNode: story.startNode,
+        }),
+      );
+    }
   };
+
+  // Show loading state if story not found
+  if (!story) {
+    return (
+      <div className="story-container" role="main" aria-live="polite">
+        <div className="story-loading">Loading story...</div>
+      </div>
+    );
+  }
 
   // Show error state if node is missing
   if (nodeError) {
@@ -87,7 +105,7 @@ function StoryContainer({ story, onBackToMenu }) {
     );
   }
 
-  // Show loading state
+  // Show loading state if node not loaded yet
   if (!currentNode) {
     return (
       <div className="story-container" role="main" aria-live="polite">
@@ -153,13 +171,6 @@ function StoryContainer({ story, onBackToMenu }) {
 }
 
 StoryContainer.propTypes = {
-  story: PropTypes.shape({
-    storyId: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    startNode: PropTypes.string.isRequired,
-    nodes: PropTypes.object.isRequired,
-  }).isRequired,
   onBackToMenu: PropTypes.func,
 };
 

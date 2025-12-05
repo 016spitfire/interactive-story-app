@@ -1,41 +1,40 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import StoryContainer from "./components/StoryContainer";
 import StoryMenu from "./components/StoryMenu";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { clearProgress } from "./store/storySlice";
+import {
+  selectStory,
+  clearProgress,
+  selectCurrentStoryId,
+} from "./store/storySlice";
 import { stories } from "./data/stories";
 import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const [selectedStory, setSelectedStory] = useState(null);
+  const currentStoryId = useSelector(selectCurrentStoryId);
 
   const handleSelectStory = (story) => {
-    setSelectedStory(story);
+    dispatch(selectStory(story.storyId));
   };
 
   const handleBackToMenu = () => {
     // Just clear the current story selection, keep all progress saved
-    setSelectedStory(null);
+    dispatch(selectStory(null));
   };
 
   const handleErrorReset = () => {
     // On error, clear everything and reset
     dispatch(clearProgress());
-    setSelectedStory(null);
   };
 
   return (
     <ErrorBoundary onReset={handleErrorReset}>
       <div className="app">
-        {!selectedStory ? (
+        {!currentStoryId ? (
           <StoryMenu stories={stories} onSelectStory={handleSelectStory} />
         ) : (
-          <StoryContainer
-            story={selectedStory}
-            onBackToMenu={handleBackToMenu}
-          />
+          <StoryContainer onBackToMenu={handleBackToMenu} />
         )}
       </div>
     </ErrorBoundary>
