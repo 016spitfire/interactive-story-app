@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#1a1a2e"/>
+
+  <!-- Open book -->
+  <path d="M 140 180 Q 256 200 372 180 L 372 340 Q 256 360 140 340 Z" fill="#e0e0e0" stroke="#0f0f1e" stroke-width="4"/>
+  <line x1="256" y1="200" x2="256" y2="360" stroke="#0f0f1e" stroke-width="4"/>
+
+  <!-- Left page lines -->
+  <line x1="160" y1="220" x2="240" y2="225" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="160" y1="240" x2="240" y2="245" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="160" y1="260" x2="230" y2="265" stroke="#1a1a2e" stroke-width="2"/>
+
+  <!-- Right page lines -->
+  <line x1="272" y1="225" x2="352" y2="220" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="272" y1="245" x2="352" y2="240" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="282" y1="265" x2="352" y2="260" stroke="#1a1a2e" stroke-width="2"/>
+
+</svg>

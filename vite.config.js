@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["vite.svg"],
+      includeAssets: ["icon.svg"],
       manifest: {
         name: "Interactive Stories",
         short_name: "Stories",
@@ -18,7 +18,7 @@ export default defineConfig({
         display: "standalone",
         icons: [
           {
-            src: "/vite.svg",
+            src: "/icon.svg",
             sizes: "512x512",
             type: "image/svg+xml",
             purpose: "any maskable",
