@@ -85,9 +85,8 @@
 }
 
 .back-to-menu-button {
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: block;
+  margin: 0 auto 1.5rem;
   padding: 0.75rem 1.25rem;
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -97,6 +96,7 @@
   cursor: pointer;
   transition: none;
   font-family: inherit;
+  width: fit-content;
 }
 
 .back-to-menu-button:hover {
@@ -217,14 +217,6 @@
   .story-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    padding-top: 3rem;
-  }
-
-  .back-to-menu-button {
-    position: static;
-    display: block;
-    margin: 0 auto 1.5rem;
-    width: fit-content;
   }
 
   .story-title {
