@@ -15,6 +15,7 @@ Remember those "choose your own adventure" books where you'd flip to page 47 if 
 ### Story Experience
 - ✅ **Mobile-First Design** - Optimized for reading on phones and tablets
 - ✅ **PWA Capabilities** - Install to home screen, works offline
+- ✅ **Custom Install Banner** - Prominent install prompt for easy home screen installation
 - ✅ **Branching Narratives** - Choices that matter and change the story
 - ✅ **State Tracking** - Your decisions persist and affect future options
 - ✅ **Save/Resume** - Progress saved automatically via localStorage
@@ -74,6 +75,7 @@ src/
 │   ├── StoryContainer.jsx  # Main story wrapper
 │   ├── StoryDisplay.jsx    # Story node renderer
 │   ├── ChoiceButtons.jsx   # Choice UI
+│   ├── InstallPrompt.jsx   # PWA install banner
 │   └── ErrorBoundary.jsx   # Error handling
 ├── store/              # Redux state management
 │   ├── store.js        # Redux store configuration
