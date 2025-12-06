@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import StoryContainer from "./components/StoryContainer";
 import StoryMenu from "./components/StoryMenu";
 import ErrorBoundary from "./components/ErrorBoundary";
+import InstallPrompt from "./components/InstallPrompt";
 import { clearProgress } from "./store/storySlice";
 import { stories } from "./data/stories";
 import { validateStories } from "./utils/storyValidation";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<StoryMenu stories={stories} />} />
           <Route path="/story/:storyId" element={<StoryRoute />} />
         </Routes>
+        <InstallPrompt />
       </div>
     </ErrorBoundary>
   );
