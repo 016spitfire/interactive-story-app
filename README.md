@@ -1,5 +1,7 @@
 # Interactive Story App
 
+🔗 **[Live Demo](https://interactive-story-app.vercel.app)** | 📱 **PWA Enabled** - Install to your home screen!
+
 A mobile-first Progressive Web App for creating and experiencing choose-your-own-adventure stories. Built on a modular dialog tree engine designed for extensibility and reuse.
 
 ## The Vision
@@ -8,29 +10,27 @@ Remember those "choose your own adventure" books where you'd flip to page 47 if 
 
 **But it's more than just nostalgia.** This project is architected around a reusable dialog tree engine that can power any branching narrative system - from interactive fiction to game NPC conversations to educational decision trees.
 
-## Core Features (Planned)
+## Features
 
 ### Story Experience
-- **Mobile-First Design** - Optimized for reading on phones and tablets
-- **PWA Capabilities** - Install to home screen, works offline
-- **Branching Narratives** - Choices that matter and change the story
-- **State Tracking** - Your decisions persist and affect future options
-- **Save/Resume** - Pick up where you left off
-
-### Story Creation
-- **Visual Story Builder** - Create branching narratives without code
-- **Choice System** - Multiple paths, consequences, and outcomes
-- **Conditional Logic** - Unlock choices based on previous decisions
-- **Rich Content** - Text, images, and formatting support
+- ✅ **Mobile-First Design** - Optimized for reading on phones and tablets
+- ✅ **PWA Capabilities** - Install to home screen, works offline
+- ✅ **Branching Narratives** - Choices that matter and change the story
+- ✅ **State Tracking** - Your decisions persist and affect future options
+- ✅ **Save/Resume** - Progress saved automatically via localStorage
+- ✅ **Multiple Stories** - Choose from different narrative adventures
+- ✅ **Restart Capability** - Start over from the beginning anytime
 
 ### Technical Foundation
-- **Modular Dialog Engine** - Clean separation between engine and UI
-- **State Management** - Redux-powered story state tracking
-- **Exportable Library** - Dialog tree engine designed for extraction as standalone package
+- ✅ **React Router Integration** - URL-based navigation with browser history
+- ✅ **Redux State Management** - Persistent story progress and choice tracking
+- ✅ **Error Boundaries** - Graceful error handling with recovery options
+- ✅ **Offline Support** - Full PWA with service worker caching
+- ✅ **Responsive Design** - Works on desktop, tablet, and mobile
 
 ## Why This Architecture?
 
-This app is built with **component extraction** in mind. The dialog tree engine lives in `/src/lib` and is designed to be pulled out as a standalone library (`react-story-dialog`) in the future. This means:
+This app is built with **component extraction** in mind. The dialog tree engine is designed to be pulled out as a standalone library in the future. This means:
 
 - **For this app**: Full-featured interactive story experience
 - **For other projects**: Reusable dialog system (like game NPC conversations)
@@ -38,12 +38,13 @@ This app is built with **component extraction** in mind. The dialog tree engine 
 
 ## Tech Stack
 
-- **React** - UI framework
-- **Vite** - Build tool (fast, modern)
-- **React Router** - Navigation and routing
-- **Redux Toolkit** - State management
-- **PWA Plugin** - Installability and offline support
-- **Mobile-First CSS** - Responsive design
+- **React 18** - UI framework with hooks
+- **Vite** - Lightning-fast build tool
+- **React Router v6** - Client-side routing
+- **Redux Toolkit** - State management with persistence
+- **Vite PWA Plugin** - Service worker and offline capabilities
+- **PropTypes** - Runtime type checking
+- **Mobile-First CSS** - Responsive design patterns
 
 ## Use Cases
 
@@ -64,29 +65,60 @@ This app is built with **component extraction** in mind. The dialog tree engine 
 
 **Building for extraction:** The dialog tree engine is intentionally decoupled from the UI. This isn't just a story app - it's a proving ground for a reusable dialog system that can power any project needing branching conversations or narratives.
 
-When the engine is mature and battle-tested, it will be extracted as `react-story-dialog` - a standalone npm package that other developers can use in their own projects.
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── StoryMenu.jsx   # Story selection screen
+│   ├── StoryContainer.jsx  # Main story wrapper
+│   ├── StoryDisplay.jsx    # Story node renderer
+│   ├── ChoiceButtons.jsx   # Choice UI
+│   └── ErrorBoundary.jsx   # Error handling
+├── store/              # Redux state management
+│   ├── store.js        # Redux store configuration
+│   └── storySlice.js   # Story state and actions
+├── data/               # Story content
+│   ├── stories.js      # Story registry
+│   └── [story].js      # Individual story files
+└── utils/              # Utilities
+    └── storyValidator.js  # Story structure validation
+```
+
+## Getting Started
+
+### Installation
+```bash
+npm install
+```
+
+### Development
+```bash
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
 
 ## Current Status
 
-🚧 **In Initial Development** - Project structure and architecture being established.
+✅ **Production Ready** - Deployed and functional with offline support
 
-The focus is on building a solid dialog tree engine while creating a delightful story experience. Development is iterative with an emphasis on clean separation of concerns.
+The app features multiple complete stories with branching narratives, full PWA capabilities, and a solid foundation for future enhancements.
 
-## Tech Highlights
+## Future Enhancements
 
-- **Modular architecture** - Engine designed for extraction and reuse
-- **State-driven narrative** - Redux manages complex story state and branching logic
-- **PWA capabilities** - Installable, offline-capable web app
-- **Mobile-first responsive design** - Works beautifully on any device
-- **Router-based navigation** - Deep linking to story nodes
-- **Library design patterns** - Public API, encapsulation, extensibility
-
-## Future Considerations
-
+- **Story Builder UI** - Visual editor for creating stories without code
 - **Story Marketplace** - Share and discover community-created stories
-- **Multiplayer Stories** - Collaborative decision-making
+- **Conditional Logic** - Unlock choices based on previous decisions
 - **Analytics** - Track which paths players take most often
-- **Story Templates** - Genre-specific starting points
 - **Export to react-story-dialog** - Standalone library for other projects
 
 ## License
