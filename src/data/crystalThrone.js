@@ -226,6 +226,106 @@ export const crystalThrone = {
       isEnding: false,
     },
 
+    "pick-locks": {
+      id: "pick-locks",
+      text: "You focus your magic on the locks, trying to sense their mechanisms. The crown lock resists immediately—it's not mechanical at all, but bound by an enchantment of loyalty and service.\n\nAs you probe deeper, the locks react. A wave of magical feedback slams into your mind, and you stagger back. The prisoner groans from behind the door.\n\n'Don't... force them,' a weak voice calls out. 'The locks... respond to truth, not power.'\n\nYou've wasted precious time. Footsteps echo from the passage above.",
+      choices: [
+        {
+          text: "Call out to identify the prisoner",
+          next: "call-out",
+        },
+        {
+          text: "Search the chamber for another way",
+          next: "search-chamber",
+        },
+        {
+          text: "Hide and wait for whoever is coming",
+          next: "hide-chamber",
+        },
+      ],
+      isEnding: false,
+    },
+
+    "search-chamber": {
+      id: "search-chamber",
+      text: "You search the circular chamber methodically. The walls are covered in Old Realm inscriptions, philosophical riddles about kingship, sacrifice, and truth. There are no physical keys anywhere.\n\nAs you read the inscriptions, you begin to understand—the 'three keys' aren't objects. They're concepts: service (the crown), truth (the heart), and transformation (the flame).\n\nThe prisoner coughs weakly behind the door. You're running out of time to make a choice.",
+      choices: [
+        {
+          text: "Call out to the prisoner for guidance",
+          next: "call-out",
+        },
+        {
+          text: "Attempt to unlock the crown lock through an act of service",
+          next: "service-unlock",
+        },
+        {
+          text: "Study the inscriptions more carefully",
+          next: "study-inscriptions",
+        },
+      ],
+      isEnding: false,
+    },
+
+    "hide-chamber": {
+      id: "hide-chamber",
+      text: "You quickly duck into a shadowed alcove as heavy footsteps descend into the chamber. Three guards enter, led by someone wearing royal robes—but you can see the wrongness in how they move, how shadows cling to them unnaturally.\n\nThe doppelganger king approaches the sealed door. 'Still alive in there, Aldric?' it mocks. 'How does it feel, knowing your kingdom thrives under my rule while you rot?'\n\nYou have the element of surprise, but you're outnumbered.",
+      choices: [
+        {
+          text: "Attack the doppelganger while its back is turned",
+          next: "fight-doppelganger",
+        },
+        {
+          text: "Wait for them to leave and try again",
+          next: "promise-return",
+        },
+        {
+          text: "Flee before they discover you",
+          next: "flee-chaos",
+        },
+      ],
+      isEnding: false,
+    },
+
+    "service-unlock": {
+      id: "service-unlock",
+      text: "You kneel before the door and speak clearly: 'I seek no crown for myself. I am a mage of Valoreth, sworn to serve its people and protect its rightful ruler. My service is my key.'\n\nThe crown lock glows softly and clicks open. You feel a surge of hope—one lock down, two to go.\n\nBut before you can celebrate, you hear voices approaching from above. The doppelganger and his guards are returning to check on the prisoner.",
+      choices: [
+        {
+          text: "Quickly try to open the heart lock",
+          next: "heart-truth",
+        },
+        {
+          text: "Hide and observe",
+          next: "hide-chamber",
+        },
+        {
+          text: "Stand your ground and declare yourself",
+          next: "declare-servant",
+        },
+      ],
+      isEnding: false,
+    },
+
+    "study-inscriptions": {
+      id: "study-inscriptions",
+      text: "You trace your fingers over the Old Realm script, reading carefully. The inscriptions tell a story: a king who sacrificed himself to save his kingdom, a mage who gave up power to serve truth, a flame that consumed darkness but was itself transformed.\n\nThe pattern becomes clear—each lock requires a sacrifice of ego, a truth spoken aloud, and a willingness to be changed. You're beginning to understand what must be done.\n\nFootsteps echo from above. Time is running out.",
+      choices: [
+        {
+          text: "Put your understanding into action with the locks",
+          next: "service-unlock",
+        },
+        {
+          text: "Call to the prisoner for confirmation",
+          next: "call-out",
+        },
+        {
+          text: "Prepare to face whoever is coming",
+          next: "hide-chamber",
+        },
+      ],
+      isEnding: false,
+    },
+
     "call-out": {
       id: "call-out",
       text: "'Who's there?' you call through the door.\n\nA weak voice responds: 'Is that... is someone real? Not another shadow illusion?' The voice is familiar—it's King Aldric, but he sounds broken, exhausted.\n\n'I am the King of Valoreth,' the voice continues. 'I've been imprisoned here for months. A creature of shadow took my place. You must warn—'\n\nHe breaks into coughing. You hear footsteps descending the passage behind you. You're running out of time.",

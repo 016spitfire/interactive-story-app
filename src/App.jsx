@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StoryContainer from "./components/StoryContainer";
 import StoryMenu from "./components/StoryMenu";
@@ -8,11 +9,24 @@ import {
   selectCurrentStoryId,
 } from "./store/storySlice";
 import { stories } from "./data/stories";
+import { validateStories } from "./utils/storyValidation";
 import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
   const currentStoryId = useSelector(selectCurrentStoryId);
+
+  // Development-only: Validate all stories on mount
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      const result = validateStories(stories);
+      if (!result.isValid) {
+        console.error("❌ Story validation failed:", result);
+      } else {
+        console.log("✅ All stories validated successfully:", result);
+      }
+    }
+  }, []);
 
   const handleSelectStory = (story) => {
     dispatch(selectStory(story.storyId));

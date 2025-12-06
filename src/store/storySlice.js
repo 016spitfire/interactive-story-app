@@ -60,43 +60,14 @@ const storySlice = createSlice({
     loadSavedProgress: (state, action) => {
       const savedState = action.payload;
 
-      // Handle migration from old state structure
-      if (
-        savedState.currentNodeId &&
-        savedState.visitedNodes &&
-        savedState.currentStoryId
-      ) {
-        // Old structure detected - migrate it
-        return {
-          currentStoryId: null,
-          storiesProgress: {
-            [savedState.currentStoryId]: {
-              currentNodeId: savedState.currentNodeId,
-              visitedNodes: savedState.visitedNodes,
-              startTime: savedState.startTime || new Date().toISOString(),
-              lastUpdated: savedState.lastUpdated || new Date().toISOString(),
-            },
-          },
-        };
-      }
-
-      // New structure - use as-is, but ensure storiesProgress exists
+      // Use saved state, ensure storiesProgress exists
       return {
-        currentStoryId: null,
+        currentStoryId: null, // Always start at menu on page load
         storiesProgress: savedState.storiesProgress || {},
       };
     },
     clearProgress: () => {
       return initialState;
-    },
-    clearStoryProgress: (state, action) => {
-      const storyId = action.payload;
-      if (state.storiesProgress[storyId]) {
-        delete state.storiesProgress[storyId];
-      }
-      if (state.currentStoryId === storyId) {
-        state.currentStoryId = null;
-      }
     },
   },
 });
@@ -108,7 +79,6 @@ export const {
   selectStory,
   loadSavedProgress,
   clearProgress,
-  clearStoryProgress,
 } = storySlice.actions;
 
 export default storySlice.reducer;
@@ -120,10 +90,6 @@ export const selectCurrentStoryProgress = (state) => {
   if (!storyId || !state.story.storiesProgress) return null;
   return state.story.storiesProgress[storyId] || null;
 };
-export const selectStoryProgress = (storyId) => (state) => {
-  if (!state.story.storiesProgress) return null;
-  return state.story.storiesProgress[storyId] || null;
-};
 export const selectCurrentNodeId = (state) => {
   const progress = selectCurrentStoryProgress(state);
   return progress ? progress.currentNodeId : null;
@@ -131,12 +97,4 @@ export const selectCurrentNodeId = (state) => {
 export const selectVisitedNodes = (state) => {
   const progress = selectCurrentStoryProgress(state);
   return progress ? progress.visitedNodes : [];
-};
-export const selectStartTime = (state) => {
-  const progress = selectCurrentStoryProgress(state);
-  return progress ? progress.startTime : null;
-};
-export const selectLastUpdated = (state) => {
-  const progress = selectCurrentStoryProgress(state);
-  return progress ? progress.lastUpdated : null;
 };

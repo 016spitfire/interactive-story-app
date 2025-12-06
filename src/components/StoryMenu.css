@@ -63,7 +63,7 @@
   padding: 2rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -73,7 +73,7 @@
 }
 
 .story-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -136,7 +136,7 @@
   font-weight: 600;
   color: #667eea;
   margin-top: auto;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .story-card:hover .story-card-cta {
