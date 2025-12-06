@@ -81,6 +81,8 @@ function StoryContainer({ onBackToMenu }) {
   }
 
   // Show error state if node is missing
+  // Note: This catches data errors (missing story nodes), while ErrorBoundary catches React errors.
+  // They're complementary - this provides user-friendly recovery for story data issues.
   if (nodeError) {
     return (
       <div className="story-container" role="main">
@@ -106,6 +108,8 @@ function StoryContainer({ onBackToMenu }) {
   }
 
   // Show loading state if node not loaded yet
+  // Note: Loading is nearly instant (just React renders), so a spinner would barely be visible.
+  // Keep simple for now - can add animation as post-launch polish if needed.
   if (!currentNode) {
     return (
       <div className="story-container" role="main" aria-live="polite">
@@ -113,7 +117,8 @@ function StoryContainer({ onBackToMenu }) {
       </div>
     );
   }
-
+  // Note: visitedNodes tracks current playthrough only (clears on restart).
+  // This makes progress % meaningful per-run. All-time tracking could be added later as a separate feature.
   const progressPercent = Math.round(
     (visitedNodes.length / Object.keys(story.nodes).length) * 100,
   );
