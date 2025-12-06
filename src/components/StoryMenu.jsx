@@ -1,7 +1,14 @@
-import PropTypes from 'prop-types';
-import './StoryMenu.css';
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import "./StoryMenu.css";
 
-function StoryMenu({ stories, onSelectStory }) {
+function StoryMenu({ stories }) {
+  const navigate = useNavigate();
+
+  const handleSelectStory = (storyId) => {
+    navigate(`/story/${storyId}`);
+  };
+
   return (
     <div className="story-menu">
       <header className="menu-header">
@@ -14,7 +21,7 @@ function StoryMenu({ stories, onSelectStory }) {
           <button
             key={story.storyId}
             className="story-card"
-            onClick={() => onSelectStory(story)}
+            onClick={() => handleSelectStory(story.storyId)}
             aria-label={`Play ${story.title}`}
           >
             <h2 className="story-card-title">{story.title}</h2>
@@ -37,9 +44,8 @@ StoryMenu.propTypes = {
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
-  onSelectStory: PropTypes.func.isRequired,
 };
 
 export default StoryMenu;

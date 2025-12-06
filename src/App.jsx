@@ -1,20 +1,16 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import StoryContainer from "./components/StoryContainer";
 import StoryMenu from "./components/StoryMenu";
 import ErrorBoundary from "./components/ErrorBoundary";
-import {
-  selectStory,
-  clearProgress,
-  selectCurrentStoryId,
-} from "./store/storySlice";
+import { clearProgress } from "./store/storySlice";
 import { stories } from "./data/stories";
 import { validateStories } from "./utils/storyValidation";
 import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const currentStoryId = useSelector(selectCurrentStoryId);
 
   // Development-only: Validate all stories on mount
   useEffect(() => {
@@ -28,15 +24,6 @@ function App() {
     }
   }, []);
 
-  const handleSelectStory = (story) => {
-    dispatch(selectStory(story.storyId));
-  };
-
-  const handleBackToMenu = () => {
-    // Just clear the current story selection, keep all progress saved
-    dispatch(selectStory(null));
-  };
-
   const handleErrorReset = () => {
     // On error, clear everything and reset
     dispatch(clearProgress());
@@ -45,14 +32,25 @@ function App() {
   return (
     <ErrorBoundary onReset={handleErrorReset}>
       <div className="app">
-        {!currentStoryId ? (
-          <StoryMenu stories={stories} onSelectStory={handleSelectStory} />
-        ) : (
-          <StoryContainer onBackToMenu={handleBackToMenu} />
-        )}
+        <Routes>
+          <Route path="/" element={<StoryMenu stories={stories} />} />
+          <Route path="/story/:storyId" element={<StoryRoute />} />
+        </Routes>
       </div>
     </ErrorBoundary>
   );
+}
+
+// Separate component to handle story routing
+function StoryRoute() {
+  const { storyId } = useParams();
+  const navigate = useNavigate();
+
+  const handleBackToMenu = () => {
+    navigate("/");
+  };
+
+  return <StoryContainer storyId={storyId} onBackToMenu={handleBackToMenu} />;
 }
 
 export default App;

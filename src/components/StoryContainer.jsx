@@ -7,7 +7,6 @@ import {
   startStory,
   navigateToNode,
   restartStory,
-  selectCurrentStoryId,
   selectCurrentNodeId,
   selectVisitedNodes,
 } from "../store/storySlice";
@@ -15,19 +14,18 @@ import { getSafeNode } from "../utils/storyValidation";
 import { stories } from "../data/stories";
 import "./StoryContainer.css";
 
-function StoryContainer({ onBackToMenu }) {
+function StoryContainer({ storyId, onBackToMenu }) {
   const dispatch = useDispatch();
-  const currentStoryId = useSelector(selectCurrentStoryId);
-  const currentNodeId = useSelector(selectCurrentNodeId);
-  const visitedNodes = useSelector(selectVisitedNodes);
+  const currentNodeId = useSelector(selectCurrentNodeId(storyId));
+  const visitedNodes = useSelector(selectVisitedNodes(storyId));
   const [nodeError, setNodeError] = useState(null);
 
-  // Find the story object from the stories array using Redux currentStoryId
-  const story = stories.find((s) => s.storyId === currentStoryId);
+  // Find the story object from the stories array using the storyId prop
+  const story = stories.find((s) => s.storyId === storyId);
 
   // Initialize story on mount or when story ID changes
   useEffect(() => {
-    if (story && currentStoryId) {
+    if (story) {
       dispatch(
         startStory({
           storyId: story.storyId,
@@ -35,7 +33,7 @@ function StoryContainer({ onBackToMenu }) {
         }),
       );
     }
-  }, [dispatch, currentStoryId, story]);
+  }, [dispatch, storyId, story]);
 
   // Get current node safely with error handling
   const currentNode = story ? getSafeNode(story, currentNodeId) : null;
@@ -176,6 +174,7 @@ function StoryContainer({ onBackToMenu }) {
 }
 
 StoryContainer.propTypes = {
+  storyId: PropTypes.string.isRequired,
   onBackToMenu: PropTypes.func,
 };
 
