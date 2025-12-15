@@ -4,6 +4,17 @@ export const zeldaLunaAdventure = {
   author: "Spencer Kittle",
   description:
     "Join sisters Zelda and Luna on a silly quest to save the town's dessert festival!",
+
+  // Organization
+  category: "kids",
+  series: "zelda-and-luna",
+  seriesOrder: 1,
+
+  // Filtering/Discovery
+  tags: ["wholesome", "adventure", "magic", "friendship", "problem-solving"],
+  difficulty: "easy",
+  estimatedTime: "10-15 minutes",
+
   startNode: "start",
   nodes: {
     start: {

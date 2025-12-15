@@ -2,6 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   storiesProgress: {},
+  userPreferences: {
+    starredStories: [],
+    completedStories: [],
+    seriesProgress: {},
+  },
 };
 
 const storySlice = createSlice({
@@ -51,13 +56,42 @@ const storySlice = createSlice({
     loadSavedProgress: (state, action) => {
       const savedState = action.payload;
 
-      // Use saved state, ensure storiesProgress exists
+      // Use saved state, ensure both storiesProgress and userPreferences exist
       return {
         storiesProgress: savedState.storiesProgress || {},
+        userPreferences:
+          savedState.userPreferences || initialState.userPreferences,
       };
     },
     clearProgress: () => {
       return initialState;
+    },
+    toggleStarStory: (state, action) => {
+      const { storyId } = action.payload;
+      const index = state.userPreferences.starredStories.indexOf(storyId);
+
+      if (index > -1) {
+        // Remove from starred
+        state.userPreferences.starredStories.splice(index, 1);
+      } else {
+        // Add to starred
+        state.userPreferences.starredStories.push(storyId);
+      }
+    },
+    markStoryCompleted: (state, action) => {
+      const { storyId } = action.payload;
+
+      if (!state.userPreferences.completedStories.includes(storyId)) {
+        state.userPreferences.completedStories.push(storyId);
+      }
+    },
+    updateSeriesProgress: (state, action) => {
+      const { seriesId, completed, total } = action.payload;
+
+      state.userPreferences.seriesProgress[seriesId] = {
+        completed,
+        total,
+      };
     },
   },
 });
@@ -68,6 +102,9 @@ export const {
   restartStory,
   loadSavedProgress,
   clearProgress,
+  toggleStarStory,
+  markStoryCompleted,
+  updateSeriesProgress,
 } = storySlice.actions;
 
 export default storySlice.reducer;
@@ -87,4 +124,27 @@ export const selectCurrentNodeId = (storyId) => (state) => {
 export const selectVisitedNodes = (storyId) => (state) => {
   const progress = selectStoryProgress(storyId)(state);
   return progress ? progress.visitedNodes : [];
+};
+
+// User Preferences Selectors
+export const selectStarredStories = (state) => {
+  return state.story.userPreferences?.starredStories || [];
+};
+
+export const selectCompletedStories = (state) => {
+  return state.story.userPreferences?.completedStories || [];
+};
+
+export const selectSeriesProgress = (seriesId) => (state) => {
+  return state.story.userPreferences?.seriesProgress?.[seriesId] || null;
+};
+
+export const selectIsStoryStarred = (storyId) => (state) => {
+  const starred = selectStarredStories(state);
+  return starred.includes(storyId);
+};
+
+export const selectIsStoryCompleted = (storyId) => (state) => {
+  const completed = selectCompletedStories(state);
+  return completed.includes(storyId);
 };

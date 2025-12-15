@@ -4,6 +4,17 @@ export const crystalThrone = {
   author: "Spencer Kittle",
   description:
     "A fantasy adventure where your choices determine the fate of a kingdom on the brink of war.",
+
+  // Organization
+  category: "fantasy",
+  series: "crystal-kingdom",
+  seriesOrder: undefined, // To be determined when more stories are added
+
+  // Filtering/Discovery
+  tags: ["dark", "mystery", "adventure", "magic"],
+  difficulty: "medium",
+  estimatedTime: "15-20 minutes",
+
   startNode: "start",
   nodes: {
     start: {

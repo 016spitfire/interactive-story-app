@@ -4,6 +4,17 @@ export const stationEchoes = {
   author: "Spencer Kittle",
   description:
     "A sci-fi mystery aboard a space station where something strange is happening. Investigate, solve puzzles, and uncover the truth.",
+
+  // Organization
+  category: "sci-fi",
+  series: null, // Standalone story
+  seriesOrder: undefined,
+
+  // Filtering/Discovery
+  tags: ["mystery", "sci-fi", "puzzle", "adventure"],
+  difficulty: "medium",
+  estimatedTime: "15-20 minutes",
+
   startNode: "start",
   nodes: {
     start: {
