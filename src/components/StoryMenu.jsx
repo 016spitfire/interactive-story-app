@@ -28,6 +28,11 @@ function StoryMenu({ stories }) {
     navigate(`/story/${storyId}`);
   };
 
+  const handleViewStats = (e, storyId) => {
+    e.stopPropagation(); // Prevent card click
+    navigate(`/story/${storyId}/stats`);
+  };
+
   const handleToggleStar = (e, storyId) => {
     e.stopPropagation(); // Prevent card click
     dispatch(toggleStarStory({ storyId }));
@@ -90,6 +95,7 @@ function StoryMenu({ stories }) {
                 key={story.storyId}
                 story={story}
                 onSelect={handleSelectStory}
+                onViewStats={handleViewStats}
                 onToggleStar={handleToggleStar}
               />
             ))
@@ -100,7 +106,7 @@ function StoryMenu({ stories }) {
   );
 }
 
-function StoryCard({ story, onSelect, onToggleStar }) {
+function StoryCard({ story, onSelect, onViewStats, onToggleStar }) {
   const isStarred = useSelector(selectIsStoryStarred(story.storyId));
 
   return (
@@ -152,9 +158,18 @@ function StoryCard({ story, onSelect, onToggleStar }) {
           </div>
         )}
 
-        <span className="story-card-cta" aria-hidden="true">
-          Begin Story →
-        </span>
+        <div className="story-card-actions">
+          <button
+            className="view-stats-button"
+            onClick={(e) => onViewStats(e, story.storyId)}
+            aria-label={`View stats for ${story.title}`}
+          >
+            📊 View Stats
+          </button>
+          <span className="story-card-cta" aria-hidden="true">
+            Begin Story →
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -171,6 +186,7 @@ StoryCard.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   onSelect: PropTypes.func.isRequired,
+  onViewStats: PropTypes.func.isRequired,
   onToggleStar: PropTypes.func.isRequired,
 };
 

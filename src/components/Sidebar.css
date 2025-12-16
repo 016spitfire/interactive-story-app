@@ -100,28 +100,64 @@
 
 /* Sidebar Sections */
 .sidebar-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.sidebar-section h3 {
+/* Section Header (Accordion Toggle) */
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.section-header:hover {
+  border-bottom-color: rgba(167, 139, 250, 0.4);
+}
+
+.section-header h3 {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #a78bfa;
-  margin: 0 0 0.75rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+  margin: 0;
+}
+
+.accordion-icon {
+  font-size: 0.8rem;
+  color: #a78bfa;
+  transition: transform 0.2s ease;
+  user-select: none;
 }
 
 /* Sidebar Lists */
 .sidebar-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.75rem 0 0 0;
+  animation: slideDown 0.2s ease-out;
 }
 
 .sidebar-list li {
   margin-bottom: 0.5rem;
+}
+
+/* Accordion Content Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
 }
 
 /* Sidebar Buttons */
@@ -136,6 +172,11 @@
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.95rem;
+}
+
+/* Add spacing for standalone buttons (like Favorites) */
+.section-header + .sidebar-button {
+  margin-top: 0.75rem;
 }
 
 .sidebar-button:hover {
@@ -174,6 +215,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 0.75rem;
+  animation: slideDown 0.2s ease-out;
 }
 
 .tag-button {

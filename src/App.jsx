@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import StoryContainer from "./components/StoryContainer";
 import StoryMenu from "./components/StoryMenu";
+import StoryStats from "./components/StoryStats";
 import ErrorBoundary from "./components/ErrorBoundary";
 import InstallPrompt from "./components/InstallPrompt";
 import { clearProgress } from "./store/storySlice";
@@ -36,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StoryMenu stories={stories} />} />
           <Route path="/story/:storyId" element={<StoryRoute />} />
+          <Route path="/story/:storyId/stats" element={<StatsRoute />} />
         </Routes>
         <InstallPrompt />
       </div>
@@ -53,6 +55,13 @@ function StoryRoute() {
   };
 
   return <StoryContainer storyId={storyId} onBackToMenu={handleBackToMenu} />;
+}
+
+// Separate component to handle stats routing
+function StatsRoute() {
+  const { storyId } = useParams();
+
+  return <StoryStats storyId={storyId} />;
 }
 
 export default App;

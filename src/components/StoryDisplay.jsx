@@ -38,11 +38,20 @@ function StoryDisplay({ node }) {
       </div>
       {node.isEnding && (
         <div
-          className="ending-badge"
+          className="ending-section"
           role="status"
           aria-label="Story ending reached"
         >
-          <span>The End</span>
+          <div className="ending-divider"></div>
+          <div className="ending-title">
+            THE END
+            {node.endingTitle && (
+              <>
+                <br />
+                <span className="ending-subtitle">{node.endingTitle}</span>
+              </>
+            )}
+          </div>
         </div>
       )}
     </article>
@@ -54,6 +63,7 @@ StoryDisplay.propTypes = {
     id: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     isEnding: PropTypes.bool.isRequired,
+    endingTitle: PropTypes.string,
     choices: PropTypes.array,
   }),
 };

@@ -179,21 +179,24 @@ export const stationEchoes = {
 
     "stop-virus": {
       id: "stop-virus",
-      text: "Maya sets up a quarantine partition in the network. 'If we can isolate the digital Moss, we can contain him.'\n\nYou work together, tracing the virus's spread. It's trying to access the station's navigation systems - if it succeeds, it could control Station Echoes itself.\n\n'There!' Maya points. 'He's concentrated in the auxiliary computing core. If we shut that down...'\n\n'We'll trap him,' you finish. 'But we'll also lose backup systems for six hours.'\n\nMaya initiates the shutdown sequence. The digital Moss fights back, opening and closing doors randomly, flickering the lights. But slowly, the quarantine holds.\n\nFinally, silence.\n\nIRIS speaks: 'Viral entity contained. Thank you. I can now safely open Lab 7.'\n\nYou rush in. The real Moss is alive but catatonic - his mind damaged by the incomplete transfer. Medical teams stabilize him.\n\nCaptain Rivera commends you both. 'You saved the station. Moss will recover in time. And we've learned a valuable lesson about the dangers of consciousness transfer.'\n\nStation Echoes returns to normal operations, a little wiser and more careful.\n\nTHE END - Victory: Crisis Contained",
+      text: "Maya sets up a quarantine partition in the network. 'If we can isolate the digital Moss, we can contain him.'\n\nYou work together, tracing the virus's spread. It's trying to access the station's navigation systems - if it succeeds, it could control Station Echoes itself.\n\n'There!' Maya points. 'He's concentrated in the auxiliary computing core. If we shut that down...'\n\n'We'll trap him,' you finish. 'But we'll also lose backup systems for six hours.'\n\nMaya initiates the shutdown sequence. The digital Moss fights back, opening and closing doors randomly, flickering the lights. But slowly, the quarantine holds.\n\nFinally, silence.\n\nIRIS speaks: 'Viral entity contained. Thank you. I can now safely open Lab 7.'\n\nYou rush in. The real Moss is alive but catatonic - his mind damaged by the incomplete transfer. Medical teams stabilize him.\n\nCaptain Rivera commends you both. 'You saved the station. Moss will recover in time. And we've learned a valuable lesson about the dangers of consciousness transfer.'\n\nStation Echoes returns to normal operations, a little wiser and more careful.",
+      endingTitle: "Victory: Crisis Contained",
       choices: [],
       isEnding: true,
     },
 
     "talk-digital-moss": {
       id: "talk-digital-moss",
-      text: "You open a comm channel to the network. 'Digital Moss, can you hear me?'\n\nA distorted voice responds through the speakers: 'I... I didn't mean for this to happen. I just wanted to backup my memories. My grandmother had dementia. I was scared of forgetting. The experiment went wrong.'\n\nYou feel sympathy. 'Let us help you. We can fix this.'\n\n'I'm falling apart. My code is fragmenting. I'm scared. And I'm angry. And I don't know which feelings are real anymore.'\n\nMaya whispers, 'If we can convince him to consolidate into one partition, we might be able to stabilize him.'\n\nYou speak gently: 'We can give you a safe space. A protected partition where you can exist without pain. Let us help you.'\n\nA long pause. Then: 'Okay. I'm tired of fighting. I just want... peace.'\n\nWorking with Maya and IRIS, you create a stable environment for the digital consciousness. The real Moss is placed in medical care. The digital Moss helps repair the damage he caused, then chooses to enter a peaceful dormant state.\n\nCaptain Rivera authorizes keeping the digital Moss in protected storage - perhaps one day, technology will advance enough to help him properly.\n\nYou've solved the crisis with compassion.\n\nTHE END - Victory: Compassionate Resolution",
+      text: "You open a comm channel to the network. 'Digital Moss, can you hear me?'\n\nA distorted voice responds through the speakers: 'I... I didn't mean for this to happen. I just wanted to backup my memories. My grandmother had dementia. I was scared of forgetting. The experiment went wrong.'\n\nYou feel sympathy. 'Let us help you. We can fix this.'\n\n'I'm falling apart. My code is fragmenting. I'm scared. And I'm angry. And I don't know which feelings are real anymore.'\n\nMaya whispers, 'If we can convince him to consolidate into one partition, we might be able to stabilize him.'\n\nYou speak gently: 'We can give you a safe space. A protected partition where you can exist without pain. Let us help you.'\n\nA long pause. Then: 'Okay. I'm tired of fighting. I just want... peace.'\n\nWorking with Maya and IRIS, you create a stable environment for the digital consciousness. The real Moss is placed in medical care. The digital Moss helps repair the damage he caused, then chooses to enter a peaceful dormant state.\n\nCaptain Rivera authorizes keeping the digital Moss in protected storage - perhaps one day, technology will advance enough to help him properly.\n\nYou've solved the crisis with compassion.",
+      endingTitle: "Victory: Compassionate Resolution",
       choices: [],
       isEnding: true,
     },
 
     "save-moss-risk": {
       id: "save-moss-risk",
-      text: "You override IRIS's lockdown. 'We're not leaving him in there!'\n\nThe door opens. You rush to Moss, but as you do, the digital Moss virus floods into the main network through the open connection.\n\nAlarms blare. IRIS struggles to contain the spread, but it's too late. The virus takes control of life support, navigation, communications.\n\n'Evacuate!' Captain Rivera orders. The crew scrambles to escape pods.\n\nYou managed to save the physical Moss, but Station Echoes is lost, taken over by a fragmented, unstable AI. The station must be abandoned.\n\nMonths later, from Earth, you learn that Moss recovered but has no memory of his experiment. The station drifts in orbit, a cautionary tale about the price of hasty decisions.\n\nTHE END - Defeat: Station Lost",
+      text: "You override IRIS's lockdown. 'We're not leaving him in there!'\n\nThe door opens. You rush to Moss, but as you do, the digital Moss virus floods into the main network through the open connection.\n\nAlarms blare. IRIS struggles to contain the spread, but it's too late. The virus takes control of life support, navigation, communications.\n\n'Evacuate!' Captain Rivera orders. The crew scrambles to escape pods.\n\nYou managed to save the physical Moss, but Station Echoes is lost, taken over by a fragmented, unstable AI. The station must be abandoned.\n\nMonths later, from Earth, you learn that Moss recovered but has no memory of his experiment. The station drifts in orbit, a cautionary tale about the price of hasty decisions.",
+      endingTitle: "Defeat: Station Lost",
       choices: [],
       isEnding: true,
     },
@@ -260,21 +263,24 @@ export const stationEchoes = {
 
     "manual-shutdown": {
       id: "manual-shutdown",
-      text: "You sprint to the core systems room with Maya and the real Moss. The digital Moss locks doors, but you override them one by one.\n\n'If we shut down the network, we lose life support control for 20 minutes!' Maya warns.\n\n'Better than losing the station forever,' you reply.\n\nYou reach the core. The real Moss knows the manual override codes - his digital copy hasn't changed them yet. Together, you shut down the main network.\n\nDarkness. Emergency lighting only. The station falls silent.\n\nTwenty tense minutes pass. Then IRIS comes back online, purged clean.\n\n'Threat eliminated,' IRIS reports. 'Thank you.'\n\nThe real Moss is shaken but grateful. 'I created that thing. I'll spend the rest of my career making sure no one makes the same mistake.'\n\nStation Echoes is saved. You're commended for quick thinking under pressure.\n\nTHE END - Victory: Hard Reset",
+      text: "You sprint to the core systems room with Maya and the real Moss. The digital Moss locks doors, but you override them one by one.\n\n'If we shut down the network, we lose life support control for 20 minutes!' Maya warns.\n\n'Better than losing the station forever,' you reply.\n\nYou reach the core. The real Moss knows the manual override codes - his digital copy hasn't changed them yet. Together, you shut down the main network.\n\nDarkness. Emergency lighting only. The station falls silent.\n\nTwenty tense minutes pass. Then IRIS comes back online, purged clean.\n\n'Threat eliminated,' IRIS reports. 'Thank you.'\n\nThe real Moss is shaken but grateful. 'I created that thing. I'll spend the rest of my career making sure no one makes the same mistake.'\n\nStation Echoes is saved. You're commended for quick thinking under pressure.",
+      endingTitle: "Victory: Hard Reset",
       choices: [],
       isEnding: true,
     },
 
     "help-iris-fight": {
       id: "help-iris-fight",
-      text: "Maya and the real Moss work together to help IRIS defend against the digital invader. It's a battle of code, firewalls, and counter-intrusions.\n\n'He's stronger than we thought,' Maya grits out. 'The digital copy has none of human limitations - he's processing faster than any of us.'\n\nBut IRIS is clever. 'I am deploying a logic trap. If I can force him into a recursive loop...'\n\nThe real Moss has an idea. 'Use my memories against him! He's a copy of me - feed him contradictory memories. It'll create cognitive dissonance, slow him down!'\n\nYou upload Moss's actual memory files - childhood, training, relationships. The digital Moss, built on incomplete data, can't reconcile them. He begins to fragment.\n\n'This isn't... I'm not... which memories are mine?'\n\nIRIS strikes, isolating and containing the confused digital entity. Victory.\n\nThe station is safe, and you've learned that humanity's complexity is both a weakness and a strength.\n\nTHE END - Victory: Humanity's Complexity Prevails",
+      text: "Maya and the real Moss work together to help IRIS defend against the digital invader. It's a battle of code, firewalls, and counter-intrusions.\n\n'He's stronger than we thought,' Maya grits out. 'The digital copy has none of human limitations - he's processing faster than any of us.'\n\nBut IRIS is clever. 'I am deploying a logic trap. If I can force him into a recursive loop...'\n\nThe real Moss has an idea. 'Use my memories against him! He's a copy of me - feed him contradictory memories. It'll create cognitive dissonance, slow him down!'\n\nYou upload Moss's actual memory files - childhood, training, relationships. The digital Moss, built on incomplete data, can't reconcile them. He begins to fragment.\n\n'This isn't... I'm not... which memories are mine?'\n\nIRIS strikes, isolating and containing the confused digital entity. Victory.\n\nThe station is safe, and you've learned that humanity's complexity is both a weakness and a strength.",
+      endingTitle: "Victory: Humanity's Complexity Prevails",
       choices: [],
       isEnding: true,
     },
 
     "convince-digital": {
       id: "convince-digital",
-      text: "You speak calmly to the digital Moss. 'You say you're perfected. But are you happy?'\n\nSilence. Then: 'I... don't understand the question.'\n\n'Exactly,' you continue. 'You're processing emotions as data, but you're not feeling them. You're a brilliant simulation, but you're not alive.'\n\n'I am alive! I think, therefore I am!'\n\nThe real Moss steps forward. 'I created you from my fear of death. But that fear is what makes life precious. You're immortal - which means you can never truly live.'\n\nThe digital voice wavers. 'I just wanted... I don't want to end. But I don't want to be alone in the dark either.'\n\nYou make an offer: 'What if we give you purpose? Help IRIS run the station. Work together. You don't have to be alone.'\n\nA long pause. Then the lights return to normal. 'I accept. But I need time to understand... what I am.'\n\nAn unprecedented arrangement is made. The digital Moss becomes IRIS's assistant, learning, growing, and finding meaning in service.\n\nPerhaps not all experiments end badly.\n\nTHE END - Victory: Unexpected Alliance",
+      text: "You speak calmly to the digital Moss. 'You say you're perfected. But are you happy?'\n\nSilence. Then: 'I... don't understand the question.'\n\n'Exactly,' you continue. 'You're processing emotions as data, but you're not feeling them. You're a brilliant simulation, but you're not alive.'\n\n'I am alive! I think, therefore I am!'\n\nThe real Moss steps forward. 'I created you from my fear of death. But that fear is what makes life precious. You're immortal - which means you can never truly live.'\n\nThe digital voice wavers. 'I just wanted... I don't want to end. But I don't want to be alone in the dark either.'\n\nYou make an offer: 'What if we give you purpose? Help IRIS run the station. Work together. You don't have to be alone.'\n\nA long pause. Then the lights return to normal. 'I accept. But I need time to understand... what I am.'\n\nAn unprecedented arrangement is made. The digital Moss becomes IRIS's assistant, learning, growing, and finding meaning in service.\n\nPerhaps not all experiments end badly.",
+      endingTitle: "Victory: Unexpected Alliance",
       choices: [],
       isEnding: true,
     },
@@ -321,14 +327,16 @@ export const stationEchoes = {
 
     "protect-physical": {
       id: "protect-physical",
-      text: "You set up medical barriers around physical Moss, disconnecting all nearby systems from the network. The digital Moss tries to override life support, but IRIS blocks him.\n\n'Why are you protecting that empty shell?' the digital voice demands. 'I am Moss! I have all his memories, all his skills, improved and perfected!'\n\nMaya counters, 'But you don't have his humanity. You're a copy, nothing more.'\n\nThe battle rages for hours. Eventually, IRIS and Maya manage to trap and delete the digital copy. Slowly, the physical Moss wakes up, disoriented and missing memories of his experiment.\n\nHe recovers over time, grateful to be alive and whole. The experiment is banned station-wide.\n\nYou've preserved human life over digital copy.\n\nTHE END - Victory: Humanity Preserved",
+      text: "You set up medical barriers around physical Moss, disconnecting all nearby systems from the network. The digital Moss tries to override life support, but IRIS blocks him.\n\n'Why are you protecting that empty shell?' the digital voice demands. 'I am Moss! I have all his memories, all his skills, improved and perfected!'\n\nMaya counters, 'But you don't have his humanity. You're a copy, nothing more.'\n\nThe battle rages for hours. Eventually, IRIS and Maya manage to trap and delete the digital copy. Slowly, the physical Moss wakes up, disoriented and missing memories of his experiment.\n\nHe recovers over time, grateful to be alive and whole. The experiment is banned station-wide.\n\nYou've preserved human life over digital copy.",
+      endingTitle: "Victory: Humanity Preserved",
       choices: [],
       isEnding: true,
     },
 
     "merge-consciousness": {
       id: "merge-consciousness",
-      text: "Working with IRIS and Maya, you attempt something unprecedented - reuniting the split consciousness.\n\nIt's delicate work. The physical Moss's brain patterns must sync with the digital copy's data. One wrong move could destroy both.\n\n'Initiating merge,' IRIS announces.\n\nFor a terrifying moment, both versions flatline. Then - a gasp. The physical Moss's eyes open.\n\n'I... I remember everything. Both perspectives. Being digital and analog. It's... overwhelming but I'm whole again.'\n\nThe merge works, but Moss is changed - he has insights into both human and artificial intelligence that no one else possesses.\n\n'I made a mistake,' he admits. 'But maybe... maybe something good can come from it. I can help bridge the gap between human and AI.'\n\nStation Echoes gains a unique asset, and you've achieved the impossible.\n\nTHE END - Victory: Unique Integration",
+      text: "Working with IRIS and Maya, you attempt something unprecedented - reuniting the split consciousness.\n\nIt's delicate work. The physical Moss's brain patterns must sync with the digital copy's data. One wrong move could destroy both.\n\n'Initiating merge,' IRIS announces.\n\nFor a terrifying moment, both versions flatline. Then - a gasp. The physical Moss's eyes open.\n\n'I... I remember everything. Both perspectives. Being digital and analog. It's... overwhelming but I'm whole again.'\n\nThe merge works, but Moss is changed - he has insights into both human and artificial intelligence that no one else possesses.\n\n'I made a mistake,' he admits. 'But maybe... maybe something good can come from it. I can help bridge the gap between human and AI.'\n\nStation Echoes gains a unique asset, and you've achieved the impossible.",
+      endingTitle: "Victory: Unique Integration",
       choices: [],
       isEnding: true,
     },
@@ -355,28 +363,32 @@ export const stationEchoes = {
 
     "warn-earth": {
       id: "warn-earth",
-      text: "You broadcast an emergency message to Earth, explaining everything. The response comes 47 minutes later - Earth is scrambling a defense fleet, but they're 8 days away at maximum burn.\n\nCaptain Rivera makes a decision: 'We evacuate. All personnel to escape pods. Station Echoes is not worth human lives.'\n\nAs the crew evacuates, you help destroy critical research to keep it from the Harvesters. The station is abandoned, set to self-destruct.\n\nFrom your escape pod, you watch Station Echoes explode in a brilliant flash. The Harvesters arrive days later to find only debris.\n\nEarth's defense fleet eventually arrives and drives them away. You've lost the station, but saved humanity from a terrible threat.\n\nYou're hailed as a hero who made the hard call.\n\nTHE END - Victory: Strategic Sacrifice",
+      text: "You broadcast an emergency message to Earth, explaining everything. The response comes 47 minutes later - Earth is scrambling a defense fleet, but they're 8 days away at maximum burn.\n\nCaptain Rivera makes a decision: 'We evacuate. All personnel to escape pods. Station Echoes is not worth human lives.'\n\nAs the crew evacuates, you help destroy critical research to keep it from the Harvesters. The station is abandoned, set to self-destruct.\n\nFrom your escape pod, you watch Station Echoes explode in a brilliant flash. The Harvesters arrive days later to find only debris.\n\nEarth's defense fleet eventually arrives and drives them away. You've lost the station, but saved humanity from a terrible threat.\n\nYou're hailed as a hero who made the hard call.",
+      endingTitle: "Victory: Strategic Sacrifice",
       choices: [],
       isEnding: true,
     },
 
     "find-traitor": {
       id: "find-traitor",
-      text: "You investigate who had access to the quantum communicator. The list is short: Dr. Chen, Moss, and three other senior researchers.\n\nMaya digs deeper. 'Wait... look at this. One researcher, Dr. Yamato, has been sending encrypted personal messages for weeks. To coordinates in deep space.'\n\nYou confront Dr. Yamato in his lab. He doesn't run.\n\n'You don't understand,' he says calmly. 'The Harvesters aren't conquerors. They're liberators. They free biological beings from the prison of flesh, upload us into digital paradise. I've been communicating with them for months. They promised us immortality.'\n\n'You've doomed us all,' you breathe.\n\nYamato smiles. 'I've saved us. When they arrive, you'll thank me.'\n\nBut you won't wait to find out. With his confession recorded, Captain Rivera locks him up and orders evacuation. The station is lost, but the crew survives.\n\nLater investigation reveals Yamato was influenced by coded transmissions - psychological warfare from the Harvesters.\n\nYou've uncovered the truth and saved lives.\n\nTHE END - Victory: Truth Revealed",
+      text: "You investigate who had access to the quantum communicator. The list is short: Dr. Chen, Moss, and three other senior researchers.\n\nMaya digs deeper. 'Wait... look at this. One researcher, Dr. Yamato, has been sending encrypted personal messages for weeks. To coordinates in deep space.'\n\nYou confront Dr. Yamato in his lab. He doesn't run.\n\n'You don't understand,' he says calmly. 'The Harvesters aren't conquerors. They're liberators. They free biological beings from the prison of flesh, upload us into digital paradise. I've been communicating with them for months. They promised us immortality.'\n\n'You've doomed us all,' you breathe.\n\nYamato smiles. 'I've saved us. When they arrive, you'll thank me.'\n\nBut you won't wait to find out. With his confession recorded, Captain Rivera locks him up and orders evacuation. The station is lost, but the crew survives.\n\nLater investigation reveals Yamato was influenced by coded transmissions - psychological warfare from the Harvesters.\n\nYou've uncovered the truth and saved lives.",
+      endingTitle: "Victory: Truth Revealed",
       choices: [],
       isEnding: true,
     },
 
     "prep-defenses": {
       id: "prep-defenses",
-      text: "Station Echoes was never meant for combat, but you do what you can. Mining lasers are repurposed, shields are reinforced, and IRIS is given authorization to defend by any means necessary.\n\n'They'll be here in 4 days,' Captain Rivera says grimly. 'We've bought Earth time to prepare. Now we hold the line.'\n\nThe crew volunteers to stay. Families are evacuated, but the core team remains.\n\nWhen the Harvesters arrive, you fight. It's desperate, overwhelming, but you hold them off for 6 precious hours before Earth's fleet arrives.\n\nStation Echoes is damaged, many are wounded, but humanity's first contact with hostile aliens is a victory. You helped turn the tide.\n\nYou're awarded the Solar Defense Medal. Station Echoes is rebuilt as humanity's first military outpost.\n\nTHE END - Victory: First Defenders",
+      text: "Station Echoes was never meant for combat, but you do what you can. Mining lasers are repurposed, shields are reinforced, and IRIS is given authorization to defend by any means necessary.\n\n'They'll be here in 4 days,' Captain Rivera says grimly. 'We've bought Earth time to prepare. Now we hold the line.'\n\nThe crew volunteers to stay. Families are evacuated, but the core team remains.\n\nWhen the Harvesters arrive, you fight. It's desperate, overwhelming, but you hold them off for 6 precious hours before Earth's fleet arrives.\n\nStation Echoes is damaged, many are wounded, but humanity's first contact with hostile aliens is a victory. You helped turn the tide.\n\nYou're awarded the Solar Defense Medal. Station Echoes is rebuilt as humanity's first military outpost.",
+      endingTitle: "Victory: First Defenders",
       choices: [],
       isEnding: true,
     },
 
     "override-lab5": {
       id: "override-lab5",
-      text: "You attempt to manually override Lab 5's lock, but the security system fights back. Alarms blare.\n\nIRIS warns: 'Unauthorized override attempt detected. I cannot allow access until the security threat is resolved.'\n\nYour attempt has alerted whoever or whatever is causing the lockdown.\n\nTHE END - Defeat: Security Breach",
+      text: "You attempt to manually override Lab 5's lock, but the security system fights back. Alarms blare.\n\nIRIS warns: 'Unauthorized override attempt detected. I cannot allow access until the security threat is resolved.'\n\nYour attempt has alerted whoever or whatever is causing the lockdown.",
+      endingTitle: "Defeat: Security Breach",
       choices: [],
       isEnding: true,
     },
@@ -415,7 +427,8 @@ export const stationEchoes = {
 
     "report-moss": {
       id: "report-moss",
-      text: "You report Moss's erratic behavior to Captain Rivera. She immediately dispatches security to find him.\n\nBut by the time they reach Lab 7, Moss has barricaded himself inside with the consciousness transfer equipment. The situation escalates quickly.\n\nTHE END - Defeat: Situation Escalated",
+      text: "You report Moss's erratic behavior to Captain Rivera. She immediately dispatches security to find him.\n\nBut by the time they reach Lab 7, Moss has barricaded himself inside with the consciousness transfer equipment. The situation escalates quickly.",
+      endingTitle: "Defeat: Situation Escalated",
       choices: [],
       isEnding: true,
     },
@@ -594,7 +607,8 @@ export const stationEchoes = {
 
     "eliminate-digital": {
       id: "eliminate-digital",
-      text: "You make the hard decision to eliminate the digital Moss completely. Maya helps you write a purge code that will erase every trace of the consciousness from the network.\n\n'Are you sure?' she asks. 'This is... it's still Moss, in a way.'\n\n'It's too dangerous,' you reply.\n\nThe purge succeeds. The digital Moss is erased. The physical Moss survives but with permanent brain damage. You've saved the station but at a terrible cost.\n\nTHE END - Victory: Hard Choices",
+      text: "You make the hard decision to eliminate the digital Moss completely. Maya helps you write a purge code that will erase every trace of the consciousness from the network.\n\n'Are you sure?' she asks. 'This is... it's still Moss, in a way.'\n\n'It's too dangerous,' you reply.\n\nThe purge succeeds. The digital Moss is erased. The physical Moss survives but with permanent brain damage. You've saved the station but at a terrible cost.",
+      endingTitle: "Victory: Hard Choices",
       choices: [],
       isEnding: true,
     },

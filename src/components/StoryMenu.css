@@ -171,6 +171,45 @@
   margin: 0;
 }
 
+/* Story Card Actions Container */
+.story-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+/* View Stats Button */
+.view-stats-button {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1.5px solid rgba(167, 139, 250, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #a78bfa;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.view-stats-button:hover {
+  background: rgba(167, 139, 250, 0.25);
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateY(-1px);
+}
+
+.view-stats-button:active {
+  transform: translateY(0);
+}
+
+.view-stats-button:focus-visible {
+  outline: 2px solid rgba(167, 139, 250, 0.8);
+  outline-offset: 2px;
+}
+
+/* Story Card CTA */
 .story-card-cta {
   display: inline-flex;
   align-items: center;
@@ -178,8 +217,8 @@
   font-size: 1rem;
   font-weight: 600;
   color: #667eea;
-  margin-top: auto;
   transition: none;
+  white-space: nowrap;
 }
 
 .story-card:hover .story-card-cta {
@@ -368,13 +407,16 @@
   .story-card,
   .story-card::before,
   .story-card-cta,
-  .star-button {
+  .star-button,
+  .view-stats-button {
     animation: none;
     transition: none;
   }
 
   .story-card:hover,
-  .star-button:hover {
+  .star-button:hover,
+  .view-stats-button:hover,
+  .view-stats-button:active {
     transform: none;
   }
 }

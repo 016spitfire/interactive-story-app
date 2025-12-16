@@ -7,6 +7,7 @@ import {
   startStory,
   navigateToNode,
   restartStory,
+  discoverEnding,
   selectCurrentNodeId,
   selectVisitedNodes,
 } from "../store/storySlice";
@@ -51,6 +52,18 @@ function StoryContainer({ storyId, onBackToMenu }) {
       setNodeError(null);
     }
   }, [currentNodeId, currentNode, story.storyId]);
+
+  // Track ending discovery
+  useEffect(() => {
+    if (currentNode && currentNode.isEnding) {
+      dispatch(
+        discoverEnding({
+          storyId: story.storyId,
+          endingNodeId: currentNode.id,
+        }),
+      );
+    }
+  }, [currentNode, dispatch, story.storyId]);
 
   const handleChoiceSelect = (nextNodeId) => {
     if (story) {

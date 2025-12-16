@@ -1,0 +1,374 @@
+.story-stats {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Header */
+.stats-header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.stats-title-container {
+  text-align: center;
+  flex: 1;
+}
+
+.back-button,
+.read-story-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.back-button:hover,
+.read-story-button:hover {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.read-story-button {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.4);
+  color: #667eea;
+  font-weight: 600;
+}
+
+.read-story-button:hover {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+.stats-title {
+  font-size: 2.5rem;
+  color: #a78bfa;
+  margin: 0 0 0.5rem 0;
+}
+
+.stats-subtitle {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Stats Content */
+.stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Top Stats Grid */
+.top-stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Desktop: side by side */
+@media (min-width: 769px) {
+  .top-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.stats-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-section h2 {
+  font-size: 1.5rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Overall Completion Circle */
+.overall-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.completion-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.completion-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 8;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.completion-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.completion-percent {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #a78bfa;
+  line-height: 1;
+}
+
+.completion-label {
+  display: block;
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(167, 139, 250, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a78bfa;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Progress Bars */
+.progress-bar-container {
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.6s ease;
+  border-radius: 15px;
+}
+
+.endings-fill {
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Endings List */
+.endings-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Auto-fill columns based on available space on desktop */
+@media (min-width: 769px) {
+  .endings-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.ending-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+}
+
+.ending-item.discovered {
+  background: rgba(167, 139, 250, 0.15);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.ending-item.undiscovered {
+  opacity: 0.6;
+}
+
+.ending-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(167, 139, 250, 0.2);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.ending-item.discovered .ending-icon {
+  background: rgba(167, 139, 250, 0.4);
+  color: #a78bfa;
+}
+
+.ending-item.undiscovered .ending-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: #6b7280;
+}
+
+.ending-title {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.ending-item.undiscovered .ending-title {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Footer */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .story-stats {
+    padding: 1rem;
+  }
+
+  .stats-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .back-button,
+  .read-story-button {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 0;
+  }
+
+  .stats-title-container {
+    flex: 1 1 100%;
+    order: 3;
+  }
+
+  .stats-title {
+    font-size: 2rem;
+  }
+
+  .stats-section {
+    padding: 1.5rem;
+  }
+
+  .completion-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .completion-percent {
+    font-size: 2.5rem;
+  }
+
+  .quick-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-section {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.stats-section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-section:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-section {
+    animation: none;
+  }
+
+  .progress-fill,
+  .circle-progress {
+    transition: none;
+  }
+}

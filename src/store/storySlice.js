@@ -6,6 +6,7 @@ const initialState = {
     starredStories: [],
     completedStories: [],
     seriesProgress: {},
+    storyCompletion: {}, // { storyId: { allVisitedNodes: [], discoveredEndings: [], playthroughCount: 0, lastUpdated: "" } }
   },
 };
 
@@ -29,6 +30,30 @@ const storySlice = createSlice({
           lastUpdated: new Date().toISOString(),
         };
       }
+
+      // Initialize or increment playthrough count in storyCompletion
+      if (!state.userPreferences.storyCompletion[storyId]) {
+        state.userPreferences.storyCompletion[storyId] = {
+          allVisitedNodes: [startNode],
+          discoveredEndings: [],
+          playthroughCount: 1,
+          lastUpdated: new Date().toISOString(),
+        };
+      } else {
+        state.userPreferences.storyCompletion[storyId].playthroughCount += 1;
+        state.userPreferences.storyCompletion[storyId].lastUpdated =
+          new Date().toISOString();
+        // Add start node to allVisitedNodes if not already there
+        if (
+          !state.userPreferences.storyCompletion[
+            storyId
+          ].allVisitedNodes.includes(startNode)
+        ) {
+          state.userPreferences.storyCompletion[storyId].allVisitedNodes.push(
+            startNode,
+          );
+        }
+      }
     },
     navigateToNode: (state, action) => {
       const { storyId, nodeId } = action.payload;
@@ -39,6 +64,21 @@ const storySlice = createSlice({
           state.storiesProgress[storyId].visitedNodes.push(nodeId);
         }
         state.storiesProgress[storyId].lastUpdated = new Date().toISOString();
+      }
+
+      // Track in storyCompletion (persistent across playthroughs)
+      if (storyId && state.userPreferences.storyCompletion[storyId]) {
+        if (
+          !state.userPreferences.storyCompletion[
+            storyId
+          ].allVisitedNodes.includes(nodeId)
+        ) {
+          state.userPreferences.storyCompletion[storyId].allVisitedNodes.push(
+            nodeId,
+          );
+        }
+        state.userPreferences.storyCompletion[storyId].lastUpdated =
+          new Date().toISOString();
       }
     },
     restartStory: (state, action) => {
@@ -93,6 +133,32 @@ const storySlice = createSlice({
         total,
       };
     },
+    discoverEnding: (state, action) => {
+      const { storyId, endingNodeId } = action.payload;
+
+      // Initialize storyCompletion if needed
+      if (!state.userPreferences.storyCompletion[storyId]) {
+        state.userPreferences.storyCompletion[storyId] = {
+          allVisitedNodes: [],
+          discoveredEndings: [],
+          playthroughCount: 0,
+          lastUpdated: new Date().toISOString(),
+        };
+      }
+
+      // Add ending to discoveredEndings if not already there
+      if (
+        !state.userPreferences.storyCompletion[
+          storyId
+        ].discoveredEndings.includes(endingNodeId)
+      ) {
+        state.userPreferences.storyCompletion[storyId].discoveredEndings.push(
+          endingNodeId,
+        );
+        state.userPreferences.storyCompletion[storyId].lastUpdated =
+          new Date().toISOString();
+      }
+    },
   },
 });
 
@@ -105,6 +171,7 @@ export const {
   toggleStarStory,
   markStoryCompleted,
   updateSeriesProgress,
+  discoverEnding,
 } = storySlice.actions;
 
 export default storySlice.reducer;
@@ -147,4 +214,29 @@ export const selectIsStoryStarred = (storyId) => (state) => {
 export const selectIsStoryCompleted = (storyId) => (state) => {
   const completed = selectCompletedStories(state);
   return completed.includes(storyId);
+};
+
+// Story Completion Selectors (for stats tracking)
+export const selectStoryCompletion = (storyId) => (state) => {
+  return state.story.userPreferences?.storyCompletion?.[storyId] || null;
+};
+
+export const selectAllVisitedNodes = (storyId) => (state) => {
+  const completion = selectStoryCompletion(storyId)(state);
+  return completion?.allVisitedNodes || [];
+};
+
+export const selectDiscoveredEndings = (storyId) => (state) => {
+  const completion = selectStoryCompletion(storyId)(state);
+  return completion?.discoveredEndings || [];
+};
+
+export const selectPlaythroughCount = (storyId) => (state) => {
+  const completion = selectStoryCompletion(storyId)(state);
+  return completion?.playthroughCount || 0;
+};
+
+export const selectLastActivity = (storyId) => (state) => {
+  const completion = selectStoryCompletion(storyId)(state);
+  return completion?.lastUpdated || null;
 };

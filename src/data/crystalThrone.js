@@ -435,7 +435,8 @@ export const crystalThrone = {
 
     "true-ending": {
       id: "true-ending",
-      text: "King Aldric stumbles from his prison, weak but determined. As he enters the chamber, the doppelganger's form begins to flicker and fade.\n\n'No!' the creature shrieks. 'I am real! I am the king!'\n\n'You are nothing,' Aldric says firmly. 'I am Aldric Valoreth, by blood and by bond, and I reclaim my throne.'\n\nThe doppelganger dissolves into shadow and dissipates. Throughout the castle, shadow wraiths release their hold on the possessed guards, fleeing back to whatever dark realm spawned them.\n\nIn the days that follow, King Aldric recovers his strength. At a ceremony before the Crystal Throne, he names you Royal Defender and grants you Meredith's seat on the council.\n\n'You believed in truth when illusion surrounded you,' the king says. 'You chose courage when fear was easier. The kingdom owes you a debt that cannot be repaid.'\n\nYou've saved the realm from shadow. But you know this is only the beginning—the Shadow Court still exists, and they will return. For now, though, the Crystal Throne stands in the light.\n\nTHE END - True Victory: The Light Prevails",
+      text: "King Aldric stumbles from his prison, weak but determined. As he enters the chamber, the doppelganger's form begins to flicker and fade.\n\n'No!' the creature shrieks. 'I am real! I am the king!'\n\n'You are nothing,' Aldric says firmly. 'I am Aldric Valoreth, by blood and by bond, and I reclaim my throne.'\n\nThe doppelganger dissolves into shadow and dissipates. Throughout the castle, shadow wraiths release their hold on the possessed guards, fleeing back to whatever dark realm spawned them.\n\nIn the days that follow, King Aldric recovers his strength. At a ceremony before the Crystal Throne, he names you Royal Defender and grants you Meredith's seat on the council.\n\n'You believed in truth when illusion surrounded you,' the king says. 'You chose courage when fear was easier. The kingdom owes you a debt that cannot be repaid.'\n\nYou've saved the realm from shadow. But you know this is only the beginning—the Shadow Court still exists, and they will return. For now, though, the Crystal Throne stands in the light.",
+      endingTitle: "True Victory: The Light Prevails",
       choices: [],
       isEnding: true,
     },
@@ -458,42 +459,48 @@ export const crystalThrone = {
 
     "sacrifice-ending": {
       id: "sacrifice-ending",
-      text: "You throw yourself at the doppelganger, grabbing it with both hands. Its shadowy form burns your skin, but you hold tight. The creature thrashes and screams, trying to break free.\n\n'Now!' you shout to the king.\n\nAldric completes the spell. White light explodes through the chamber, and the doppelganger shrieks as it's torn from this world. But you're caught in the blast, intertwined with the creature.\n\nYou wake three days later in the royal infirmary. The healers say it's a miracle you survived. King Aldric sits by your bedside.\n\n'You saved my life and my kingdom,' he says quietly. 'At the cost of your own magical ability.'\n\nYou feel the truth of it—the fonts of power within you are burned out, empty. You'll never cast another spell. But the kingdom is safe, the shadows are banished, and the Crystal Throne stands secure.\n\nSome would call it a price too high. You call it duty.\n\nTHE END - Sacrifice: The Price of Victory",
+      text: "You throw yourself at the doppelganger, grabbing it with both hands. Its shadowy form burns your skin, but you hold tight. The creature thrashes and screams, trying to break free.\n\n'Now!' you shout to the king.\n\nAldric completes the spell. White light explodes through the chamber, and the doppelganger shrieks as it's torn from this world. But you're caught in the blast, intertwined with the creature.\n\nYou wake three days later in the royal infirmary. The healers say it's a miracle you survived. King Aldric sits by your bedside.\n\n'You saved my life and my kingdom,' he says quietly. 'At the cost of your own magical ability.'\n\nYou feel the truth of it—the fonts of power within you are burned out, empty. You'll never cast another spell. But the kingdom is safe, the shadows are banished, and the Crystal Throne stands secure.\n\nSome would call it a price too high. You call it duty.",
+      endingTitle: "Sacrifice: The Price of Victory",
       choices: [],
       isEnding: true,
     },
 
     "binding-ending": {
       id: "binding-ending",
-      text: "You pour every ounce of remaining magic into a binding spell, chains of pure energy wrapping around the doppelganger. It struggles violently, but you hold firm.\n\nKing Aldric completes his banishment chant. The doppelganger explodes into harmless shadow that fades into nothing.\n\nYou collapse from exhaustion. When you wake, the king explains that the shadow conspiracy was larger than anyone knew—the doppelganger was planning to start a war with the neighboring kingdom, throwing the entire realm into chaos.\n\nBy stopping it, you've saved countless lives. King Aldric offers you any reward in his power.\n\nYou ask only for permission to continue Meredith's work—protecting the kingdom from magical threats, hunting down any remaining shadow creatures, ensuring this never happens again.\n\nYour new title: Shadow Hunter of Valoreth.\n\nTHE END - Victory: Guardian Against the Dark",
+      text: "You pour every ounce of remaining magic into a binding spell, chains of pure energy wrapping around the doppelganger. It struggles violently, but you hold firm.\n\nKing Aldric completes his banishment chant. The doppelganger explodes into harmless shadow that fades into nothing.\n\nYou collapse from exhaustion. When you wake, the king explains that the shadow conspiracy was larger than anyone knew—the doppelganger was planning to start a war with the neighboring kingdom, throwing the entire realm into chaos.\n\nBy stopping it, you've saved countless lives. King Aldric offers you any reward in his power.\n\nYou ask only for permission to continue Meredith's work—protecting the kingdom from magical threats, hunting down any remaining shadow creatures, ensuring this never happens again.\n\nYour new title: Shadow Hunter of Valoreth.",
+      endingTitle: "Victory: Guardian Against the Dark",
       choices: [],
       isEnding: true,
     },
 
     "warn-elena": {
       id: "warn-elena",
-      text: "You maintain your shield and shout through the window: 'Elena! The castle is compromised! Run!'\n\nThe princess looks up, sees the chaos through the window, and hesitates for just a moment too long. Shadow tendrils shoot across the courtyard and seize her.\n\nYour concentration breaks. The shadows overwhelm you. You hear the doppelganger's voice: 'Take them to the dungeons. They'll make excellent leverage.'\n\nYou've failed. The kingdom falls to shadow, and you spend your remaining days in the very prison that once held the true king, listening to the doppelganger consolidate its dark power.\n\nTHE END - Defeat: Consumed by Shadow",
+      text: "You maintain your shield and shout through the window: 'Elena! The castle is compromised! Run!'\n\nThe princess looks up, sees the chaos through the window, and hesitates for just a moment too long. Shadow tendrils shoot across the courtyard and seize her.\n\nYour concentration breaks. The shadows overwhelm you. You hear the doppelganger's voice: 'Take them to the dungeons. They'll make excellent leverage.'\n\nYou've failed. The kingdom falls to shadow, and you spend your remaining days in the very prison that once held the true king, listening to the doppelganger consolidate its dark power.",
+      endingTitle: "Defeat: Consumed by Shadow",
       choices: [],
       isEnding: true,
     },
 
     "fight-doppelganger": {
       id: "fight-doppelganger",
-      text: "You attack the doppelganger with everything you have—fire, force, lightning. Your spells strike true, and the creature staggers back.\n\nBut it's far more powerful than you realized. It was holding back, testing you. Now it responds with its true strength.\n\nShadow magic engulfs you, cold and suffocating. Your spells dissipate like smoke. The doppelganger's hand closes around your throat.\n\n'You could have lived,' it whispers. 'In my new order, there would have been a place for a mage of your talents. But you chose the losing side.'\n\nThe shadows consume you. The kingdom falls shortly after.\n\nTHE END - Defeat: Outmatched",
+      text: "You attack the doppelganger with everything you have—fire, force, lightning. Your spells strike true, and the creature staggers back.\n\nBut it's far more powerful than you realized. It was holding back, testing you. Now it responds with its true strength.\n\nShadow magic engulfs you, cold and suffocating. Your spells dissipate like smoke. The doppelganger's hand closes around your throat.\n\n'You could have lived,' it whispers. 'In my new order, there would have been a place for a mage of your talents. But you chose the losing side.'\n\nThe shadows consume you. The kingdom falls shortly after.",
+      endingTitle: "Defeat: Outmatched",
       choices: [],
       isEnding: true,
     },
 
     "accuse-impostor": {
       id: "accuse-impostor",
-      text: "You point at the king and declare: 'You're not King Aldric! You're a doppelganger, a creature of shadow magic!'\n\nThe court gasps. The guards move toward you. But the fake king merely smiles.\n\n'Grief has clearly driven our young mage mad,' he says smoothly. 'Guards, escort them to their chambers to rest.'\n\nAs the guards seize you, you see triumph in the king's eyes. You've revealed your knowledge without proof, and now you're powerless to stop what's coming.\n\nYou're locked in your chambers, and by morning, you've vanished—one more victim of the shadow conspiracy.\n\nTHE END - Defeat: The Truth Dies With You",
+      text: "You point at the king and declare: 'You're not King Aldric! You're a doppelganger, a creature of shadow magic!'\n\nThe court gasps. The guards move toward you. But the fake king merely smiles.\n\n'Grief has clearly driven our young mage mad,' he says smoothly. 'Guards, escort them to their chambers to rest.'\n\nAs the guards seize you, you see triumph in the king's eyes. You've revealed your knowledge without proof, and now you're powerless to stop what's coming.\n\nYou're locked in your chambers, and by morning, you've vanished—one more victim of the shadow conspiracy.",
+      endingTitle: "Defeat: The Truth Dies With You",
       choices: [],
       isEnding: true,
     },
 
     "teleport-escape": {
       id: "teleport-escape",
-      text: "You weave a desperate teleportation spell and vanish in a flash of light. You reappear in the forest outside the castle, safe but alone.\n\nYou've escaped, but the doppelganger remains in power. Without proof and without allies, there's nothing you can do. You flee the kingdom, hunted as a traitor and murderer.\n\nYears later, you hear that King 'Aldric' led the kingdom into a devastating war. You wonder if you could have stopped it, if you'd stayed and fought.\n\nBut you'll never know.\n\nTHE END - Escape: The Coward's Road",
+      text: "You weave a desperate teleportation spell and vanish in a flash of light. You reappear in the forest outside the castle, safe but alone.\n\nYou've escaped, but the doppelganger remains in power. Without proof and without allies, there's nothing you can do. You flee the kingdom, hunted as a traitor and murderer.\n\nYears later, you hear that King 'Aldric' led the kingdom into a devastating war. You wonder if you could have stopped it, if you'd stayed and fought.\n\nBut you'll never know.",
+      endingTitle: "Escape: The Coward's Road",
       choices: [],
       isEnding: true,
     },
@@ -516,56 +523,64 @@ export const crystalThrone = {
 
     "hide-pursuers": {
       id: "hide-pursuers",
-      text: "You duck into a dark alcove, holding your breath as shadow-possessed guards rush past. But the wraiths can sense magic, and you're practically glowing with power from your earlier spells.\n\nThe shadows find you. There's nowhere left to run.\n\nTHE END - Defeat: Hunted Down",
+      text: "You duck into a dark alcove, holding your breath as shadow-possessed guards rush past. But the wraiths can sense magic, and you're practically glowing with power from your earlier spells.\n\nThe shadows find you. There's nowhere left to run.",
+      endingTitle: "Defeat: Hunted Down",
       choices: [],
       isEnding: true,
     },
 
     "explain-innocence": {
       id: "explain-innocence",
-      text: "You explain that you found Meredith already dead, that you were trying to help. Garrett listens, but his shadow continues to writhe unnaturally.\n\n'A likely story,' he says coldly. 'You'll tell it to the King.'\n\nAs the guards escort you to the throne room, you realize you've lost your chance to act. The doppelganger will ensure you never speak the truth.\n\nTHE END - Defeat: Silenced",
+      text: "You explain that you found Meredith already dead, that you were trying to help. Garrett listens, but his shadow continues to writhe unnaturally.\n\n'A likely story,' he says coldly. 'You'll tell it to the King.'\n\nAs the guards escort you to the throne room, you realize you've lost your chance to act. The doppelganger will ensure you never speak the truth.",
+      endingTitle: "Defeat: Silenced",
       choices: [],
       isEnding: true,
     },
 
     "search-prison": {
       id: "search-prison",
-      text: "You search frantically for the prison entrance, following the symbol's clues. But time runs out—guards flood the chamber and seize you before you can find the hidden door.\n\nWithout proof of the conspiracy, you're blamed for Meredith's death. The doppelganger ensures you're imprisoned in the very cells where the true king suffers.\n\nTHE END - Defeat: Imprisoned",
+      text: "You search frantically for the prison entrance, following the symbol's clues. But time runs out—guards flood the chamber and seize you before you can find the hidden door.\n\nWithout proof of the conspiracy, you're blamed for Meredith's death. The doppelganger ensures you're imprisoned in the very cells where the true king suffers.",
+      endingTitle: "Defeat: Imprisoned",
       choices: [],
       isEnding: true,
     },
 
     "take-poison": {
       id: "take-poison",
-      text: "You carefully collect a sample of the poison for later analysis. But as you work, guards burst in and find you tampering with evidence. They assume you're the poisoner trying to hide your crime.\n\nYou're arrested on the spot. The doppelganger makes sure you never get a chance to clear your name.\n\nTHE END - Defeat: Framed",
+      text: "You carefully collect a sample of the poison for later analysis. But as you work, guards burst in and find you tampering with evidence. They assume you're the poisoner trying to hide your crime.\n\nYou're arrested on the spot. The doppelganger makes sure you never get a chance to clear your name.",
+      endingTitle: "Defeat: Framed",
       choices: [],
       isEnding: true,
     },
 
     "lie-to-king": {
       id: "lie-to-king",
-      text: "You claim complete ignorance, hoping to buy time. But the doppelganger sees through your deception—your eyes betrayed you when you noticed the wrong reflection.\n\n'Take them to the dungeons,' the fake king orders. 'We'll extract the truth later.'\n\nYou never get another chance to stop the conspiracy.\n\nTHE END - Defeat: Saw Through the Lie",
+      text: "You claim complete ignorance, hoping to buy time. But the doppelganger sees through your deception—your eyes betrayed you when you noticed the wrong reflection.\n\n'Take them to the dungeons,' the fake king orders. 'We'll extract the truth later.'\n\nYou never get another chance to stop the conspiracy.",
+      endingTitle: "Defeat: Saw Through the Lie",
       choices: [],
       isEnding: true,
     },
 
     "investigate-magically": {
       id: "investigate-magically",
-      text: "You request permission to magically investigate Meredith's death. The fake king considers this, then nods—perhaps intrigued to see what you know.\n\nBut as you begin your detection spell, the doppelganger's own magic interferes, corrupting your results. Worse, it uses the opportunity to bind shadow magic to you, marking you for future elimination.\n\nYou're dismissed, now hunted by shadow creatures that will ensure you never uncover the truth.\n\nTHE END - Defeat: Marked for Death",
+      text: "You request permission to magically investigate Meredith's death. The fake king considers this, then nods—perhaps intrigued to see what you know.\n\nBut as you begin your detection spell, the doppelganger's own magic interferes, corrupting your results. Worse, it uses the opportunity to bind shadow magic to you, marking you for future elimination.\n\nYou're dismissed, now hunted by shadow creatures that will ensure you never uncover the truth.",
+      endingTitle: "Defeat: Marked for Death",
       choices: [],
       isEnding: true,
     },
 
     "attack-king": {
       id: "attack-king",
-      text: "You unleash your most powerful combat spell directly at the fake king. But he was ready—your magic dissipates against his shadow shield like rain against stone.\n\n'Foolish,' he says, and darkness swallows you whole.\n\nTHE END - Defeat: Overwhelmed",
+      text: "You unleash your most powerful combat spell directly at the fake king. But he was ready—your magic dissipates against his shadow shield like rain against stone.\n\n'Foolish,' he says, and darkness swallows you whole.",
+      endingTitle: "Defeat: Overwhelmed",
       choices: [],
       isEnding: true,
     },
 
     "banish-doppelganger": {
       id: "banish-doppelganger",
-      text: "You attempt a banishment spell, but without freeing the real king first, the doppelganger is too strongly anchored to this reality. Your spell fails, and you're left defenseless.\n\nThe doppelganger strikes you down without mercy.\n\nTHE END - Defeat: Failed Banishment",
+      text: "You attempt a banishment spell, but without freeing the real king first, the doppelganger is too strongly anchored to this reality. Your spell fails, and you're left defenseless.\n\nThe doppelganger strikes you down without mercy.",
+      endingTitle: "Defeat: Failed Banishment",
       choices: [],
       isEnding: true,
     },
@@ -748,14 +763,16 @@ export const crystalThrone = {
 
     "family-banishment": {
       id: "family-banishment",
-      text: "King Aldric, Princess Elena, and you join hands in a triangle, magic flowing between you. The king speaks the words of banishment, Elena channels her royal bloodline's power, and you provide the magical framework.\n\nThe doppelganger's form dissolves, screaming curses as it's torn from this reality. Throughout the castle, shadow wraiths flee their hosts and dissipate.\n\nWhen the light fades, King Aldric embraces his daughter. Then he turns to you.\n\n'You honored Meredith's trust and saved my kingdom. I name you Royal Protector and grant you her seat on my council. Together, we'll make sure shadow never threatens Valoreth again.'\n\nIn the days that follow, the kingdom celebrates its liberation. The Crystal Throne stands secure, guarded not just by magic, but by the bonds of trust and courage forged in its darkest hour.\n\nTHE END - True Victory: Light Prevails Through Unity",
+      text: "King Aldric, Princess Elena, and you join hands in a triangle, magic flowing between you. The king speaks the words of banishment, Elena channels her royal bloodline's power, and you provide the magical framework.\n\nThe doppelganger's form dissolves, screaming curses as it's torn from this reality. Throughout the castle, shadow wraiths flee their hosts and dissipate.\n\nWhen the light fades, King Aldric embraces his daughter. Then he turns to you.\n\n'You honored Meredith's trust and saved my kingdom. I name you Royal Protector and grant you her seat on my council. Together, we'll make sure shadow never threatens Valoreth again.'\n\nIn the days that follow, the kingdom celebrates its liberation. The Crystal Throne stands secure, guarded not just by magic, but by the bonds of trust and courage forged in its darkest hour.",
+      endingTitle: "True Victory: Light Prevails Through Unity",
       choices: [],
       isEnding: true,
     },
 
     "protect-the-king": {
       id: "protect-the-king",
-      text: "You and Elena form a shield of light around the weakened king as he begins the banishment ritual. Shadow magic hammers against your barrier, but you hold firm.\n\nKing Aldric's voice grows stronger with each word of the ancient spell. Elena's royal magic reinforces your shield. The three of you work in perfect synchronization.\n\nThe doppelganger makes one final desperate lunge, but your combined defense holds. White light explodes through the chamber as the creature is banished forever.\n\nKing Aldric staggers but remains standing. 'Well done, both of you. The kingdom owes you a debt beyond measure.'\n\nAt a ceremony before the Crystal Throne, you're named Royal Defender, and Elena is formally recognized as Crown Princess and heir. The kingdom has been saved, and a new era of vigilance against shadow begins.\n\nTHE END - Victory: The Shield and the Crown",
+      text: "You and Elena form a shield of light around the weakened king as he begins the banishment ritual. Shadow magic hammers against your barrier, but you hold firm.\n\nKing Aldric's voice grows stronger with each word of the ancient spell. Elena's royal magic reinforces your shield. The three of you work in perfect synchronization.\n\nThe doppelganger makes one final desperate lunge, but your combined defense holds. White light explodes through the chamber as the creature is banished forever.\n\nKing Aldric staggers but remains standing. 'Well done, both of you. The kingdom owes you a debt beyond measure.'\n\nAt a ceremony before the Crystal Throne, you're named Royal Defender, and Elena is formally recognized as Crown Princess and heir. The kingdom has been saved, and a new era of vigilance against shadow begins.",
+      endingTitle: "Victory: The Shield and the Crown",
       choices: [],
       isEnding: true,
     },
@@ -778,14 +795,16 @@ export const crystalThrone = {
 
     "recover-and-finish": {
       id: "recover-and-finish",
-      text: "You force yourself to your feet, drawing on reserves you didn't know you had. Together with King Aldric and Elena, you face the doppelganger.\n\n'Three against one,' the creature hisses. 'You think that's enough?'\n\n'It's not about numbers,' you say. 'It's about truth.'\n\nThe three of you strike as one—royal authority, royal bloodline, and magical power unified. The doppelganger cannot stand against the combined assault and dissolves into nothing.\n\nYou've saved the kingdom and forged an unbreakable alliance. At your side stand a grateful king and a princess who will one day be a great queen. And you? You're the Royal Protector, defender against shadow, and proof that courage can triumph over any darkness.\n\nTHE END - Victory: The Triumvirate of Light",
+      text: "You force yourself to your feet, drawing on reserves you didn't know you had. Together with King Aldric and Elena, you face the doppelganger.\n\n'Three against one,' the creature hisses. 'You think that's enough?'\n\n'It's not about numbers,' you say. 'It's about truth.'\n\nThe three of you strike as one—royal authority, royal bloodline, and magical power unified. The doppelganger cannot stand against the combined assault and dissolves into nothing.\n\nYou've saved the kingdom and forged an unbreakable alliance. At your side stand a grateful king and a princess who will one day be a great queen. And you? You're the Royal Protector, defender against shadow, and proof that courage can triumph over any darkness.",
+      endingTitle: "Victory: The Triumvirate of Light",
       choices: [],
       isEnding: true,
     },
 
     "king-solo-finish": {
       id: "king-solo-finish",
-      text: "You're too drained to continue. You watch as King Aldric confronts his shadow self, weakened but determined.\n\nThe battle is fierce, but the king's rightful claim to the throne gives him power the doppelganger cannot match. With Elena's support, Aldric speaks the words of banishment, and the creature dissolves.\n\nYou wake three days later in the royal infirmary. The healers say you pushed yourself past your limits. King Aldric visits personally.\n\n'You freed me and gave me the chance to save my kingdom,' he says. 'Rest, recover, and know that you have my eternal gratitude. A position on my council awaits when you're ready.'\n\nYou succeeded, though the cost was high. But the kingdom stands free of shadow, and that's what matters.\n\nTHE END - Victory: The Price of Freedom",
+      text: "You're too drained to continue. You watch as King Aldric confronts his shadow self, weakened but determined.\n\nThe battle is fierce, but the king's rightful claim to the throne gives him power the doppelganger cannot match. With Elena's support, Aldric speaks the words of banishment, and the creature dissolves.\n\nYou wake three days later in the royal infirmary. The healers say you pushed yourself past your limits. King Aldric visits personally.\n\n'You freed me and gave me the chance to save my kingdom,' he says. 'Rest, recover, and know that you have my eternal gratitude. A position on my council awaits when you're ready.'\n\nYou succeeded, though the cost was high. But the kingdom stands free of shadow, and that's what matters.",
+      endingTitle: "Victory: The Price of Freedom",
       choices: [],
       isEnding: true,
     },
@@ -832,14 +851,16 @@ export const crystalThrone = {
 
     "final-stand-flame": {
       id: "final-stand-flame",
-      text: "You stand between Elena and the approaching shadows, channeling every bit of power into a barrier of light. Behind you, Elena speaks desperately to the flame lock.\n\n'I transform my fear into strength, my doubt into certainty—'\n\nA shadow tendril pierces your barrier, striking you. Pain explodes through your body, but you hold the line.\n\n'—my weakness into power!' Elena shouts.\n\nThe flame lock shatters. The door opens. King Aldric stumbles out, and the doppelganger's form flickers in his presence.\n\nYou collapse, but you've bought enough time. The king and princess finish what you started.\n\nTHE END - Victory: The Last Stand",
+      text: "You stand between Elena and the approaching shadows, channeling every bit of power into a barrier of light. Behind you, Elena speaks desperately to the flame lock.\n\n'I transform my fear into strength, my doubt into certainty—'\n\nA shadow tendril pierces your barrier, striking you. Pain explodes through your body, but you hold the line.\n\n'—my weakness into power!' Elena shouts.\n\nThe flame lock shatters. The door opens. King Aldric stumbles out, and the doppelganger's form flickers in his presence.\n\nYou collapse, but you've bought enough time. The king and princess finish what you started.",
+      endingTitle: "Victory: The Last Stand",
       choices: [],
       isEnding: true,
     },
 
     "shared-transformation": {
       id: "shared-transformation",
-      text: "You abandon defense and join Elena at the flame lock. Together you channel your magic, your willingness to be changed by this trial.\n\n'We were students,' you say. 'Now we're defenders!'\n\n'I was a sheltered princess,' Elena adds. 'Now I'm a warrior!'\n\nThe flame lock explodes open. King Aldric emerges just as the shadows reach you. But now you're not alone—the king channels his royal authority, the three of you forming a unified defense.\n\nThe doppelganger cannot stand against the truth of your transformation. It dissolves, and the kingdom is saved.\n\nTHE END - Victory: Forged in Flame",
+      text: "You abandon defense and join Elena at the flame lock. Together you channel your magic, your willingness to be changed by this trial.\n\n'We were students,' you say. 'Now we're defenders!'\n\n'I was a sheltered princess,' Elena adds. 'Now I'm a warrior!'\n\nThe flame lock explodes open. King Aldric emerges just as the shadows reach you. But now you're not alone—the king channels his royal authority, the three of you forming a unified defense.\n\nThe doppelganger cannot stand against the truth of your transformation. It dissolves, and the kingdom is saved.",
+      endingTitle: "Victory: Forged in Flame",
       choices: [],
       isEnding: true,
     },
@@ -874,14 +895,16 @@ export const crystalThrone = {
 
     "abandon-defense": {
       id: "abandon-defense",
-      text: "You abandon your defensive position and rush to help Elena. Together you work through the heart and flame locks, speaking truths and channeling transformation.\n\nBut you've left the entrance undefended. The doppelganger appears just as the final lock breaks.\n\n'Foolish,' it says, raising shadow-wreathed hands.\n\nThe door swings open. King Aldric emerges, weak but radiating authority. 'You're finished,' he tells his dark reflection.\n\nTogether, the three of you banish the creature. The kingdom is saved, though you realize guarding the entrance might have prevented the final confrontation from being quite so close.\n\nStill—victory is victory.\n\nTHE END - Victory: Calculated Risk",
+      text: "You abandon your defensive position and rush to help Elena. Together you work through the heart and flame locks, speaking truths and channeling transformation.\n\nBut you've left the entrance undefended. The doppelganger appears just as the final lock breaks.\n\n'Foolish,' it says, raising shadow-wreathed hands.\n\nThe door swings open. King Aldric emerges, weak but radiating authority. 'You're finished,' he tells his dark reflection.\n\nTogether, the three of you banish the creature. The kingdom is saved, though you realize guarding the entrance might have prevented the final confrontation from being quite so close.\n\nStill—victory is victory.",
+      endingTitle: "Victory: Calculated Risk",
       choices: [],
       isEnding: true,
     },
 
     "find-banishment": {
       id: "find-banishment",
-      text: "You search desperately for the banishment spell, pulling tome after tome. You find it—but it requires the original being to be present to work.\n\nYou must free the king first. But as you turn to leave, shadow-possessed guards block your exit.\n\nTHE END - Defeat: Trapped in the Archives",
+      text: "You search desperately for the banishment spell, pulling tome after tome. You find it—but it requires the original being to be present to work.\n\nYou must free the king first. But as you turn to leave, shadow-possessed guards block your exit.",
+      endingTitle: "Defeat: Trapped in the Archives",
       choices: [],
       isEnding: true,
     },
@@ -936,42 +959,48 @@ export const crystalThrone = {
 
     "desperate-unlocking": {
       id: "desperate-unlocking",
-      text: "You place your hands on each lock in turn, speaking rapid truths:\n\n'I serve!' Crown lock clicks.\n\n'I'm terrified!' Heart lock opens.\n\n'Transform me or destroy me, I don't care!' Flame lock shatters.\n\nThe door swings open as shadows flood the chamber. King Aldric stumbles out, sees the danger, and immediately begins casting.\n\nWeakened but determined, together you banish the shadow wraiths. The doppelganger, sensing its minions' destruction, flees the castle rather than face the true king.\n\nYou've won, though the doppelganger escapes to threaten another day. Still, the kingdom is free, and the king has reclaimed his throne.\n\nTHE END - Victory: The Shadow Flees",
+      text: "You place your hands on each lock in turn, speaking rapid truths:\n\n'I serve!' Crown lock clicks.\n\n'I'm terrified!' Heart lock opens.\n\n'Transform me or destroy me, I don't care!' Flame lock shatters.\n\nThe door swings open as shadows flood the chamber. King Aldric stumbles out, sees the danger, and immediately begins casting.\n\nWeakened but determined, together you banish the shadow wraiths. The doppelganger, sensing its minions' destruction, flees the castle rather than face the true king.\n\nYou've won, though the doppelganger escapes to threaten another day. Still, the kingdom is free, and the king has reclaimed his throne.",
+      endingTitle: "Victory: The Shadow Flees",
       choices: [],
       isEnding: true,
     },
 
     "gate-defense": {
       id: "gate-defense",
-      text: "You turn to face the approaching shadows, placing yourself between them and the locked gate. Behind you, you hear the imprisoned king calling: 'Who's there? Are you here to help or hurt?'\n\n'Help!' you shout back, then unleash everything you have at the shadows.\n\nYou fight brilliantly, destroying wave after wave. But there are too many. They overwhelm you, and your last thought is that at least you tried.\n\nTHE END - Defeat: Last Stand at the Gate",
+      text: "You turn to face the approaching shadows, placing yourself between them and the locked gate. Behind you, you hear the imprisoned king calling: 'Who's there? Are you here to help or hurt?'\n\n'Help!' you shout back, then unleash everything you have at the shadows.\n\nYou fight brilliantly, destroying wave after wave. But there are too many. They overwhelm you, and your last thought is that at least you tried.",
+      endingTitle: "Defeat: Last Stand at the Gate",
       choices: [],
       isEnding: true,
     },
 
     "wake-garrett": {
       id: "wake-garrett",
-      text: "You try to wake Garrett, shaking him desperately. His eyes flutter open, confused.\n\n'What... what happened?' he gasps.\n\n'You were possessed. The king is a doppelganger. I need your help.'\n\nHe struggles to his feet just as shadow wraiths burst into the room. But there's no time—they're upon you.\n\nTogether, you manage to destroy several more wraiths, but you're overwhelmed. Your brave attempt to recruit an ally cost precious seconds you couldn't afford.\n\nTHE END - Defeat: Too Slow",
+      text: "You try to wake Garrett, shaking him desperately. His eyes flutter open, confused.\n\n'What... what happened?' he gasps.\n\n'You were possessed. The king is a doppelganger. I need your help.'\n\nHe struggles to his feet just as shadow wraiths burst into the room. But there's no time—they're upon you.\n\nTogether, you manage to destroy several more wraiths, but you're overwhelmed. Your brave attempt to recruit an ally cost precious seconds you couldn't afford.",
+      endingTitle: "Defeat: Too Slow",
       choices: [],
       isEnding: true,
     },
 
     "doomed-stand": {
       id: "doomed-stand",
-      text: "You plant your feet and prepare to fight. Shadows pour in from every direction. You destroy them by the dozen, your magic blazing brilliantly.\n\nBut for every wraith you destroy, two more appear. Eventually, your power runs dry. You collapse, drained.\n\nThe last thing you see is the doppelganger king standing over you. 'Brave,' it says. 'But foolish.'\n\nTHE END - Defeat: Valiant but Doomed",
+      text: "You plant your feet and prepare to fight. Shadows pour in from every direction. You destroy them by the dozen, your magic blazing brilliantly.\n\nBut for every wraith you destroy, two more appear. Eventually, your power runs dry. You collapse, drained.\n\nThe last thing you see is the doppelganger king standing over you. 'Brave,' it says. 'But foolish.'",
+      endingTitle: "Defeat: Valiant but Doomed",
       choices: [],
       isEnding: true,
     },
 
     "fresh-air-passage": {
       id: "fresh-air-passage",
-      text: "You follow the passage with fresh air, thinking it leads outside. Instead, it's a ventilation shaft that opens high on the castle wall.\n\nYou're trapped at a dead end as shadow-possessed guards close in behind you.\n\nTHE END - Defeat: Wrong Path",
+      text: "You follow the passage with fresh air, thinking it leads outside. Instead, it's a ventilation shaft that opens high on the castle wall.\n\nYou're trapped at a dead end as shadow-possessed guards close in behind you.",
+      endingTitle: "Defeat: Wrong Path",
       choices: [],
       isEnding: true,
     },
 
     "collapsed-tunnel": {
       id: "collapsed-tunnel",
-      text: "You investigate the collapsed tunnel, hoping to find a way through. But the rubble is too thick, and you've wasted precious time.\n\nGuards discover you before you can find another route.\n\nTHE END - Defeat: Dead End",
+      text: "You investigate the collapsed tunnel, hoping to find a way through. But the rubble is too thick, and you've wasted precious time.\n\nGuards discover you before you can find another route.",
+      endingTitle: "Defeat: Dead End",
       choices: [],
       isEnding: true,
     },
@@ -1022,28 +1051,32 @@ export const crystalThrone = {
 
     "rescue-elena-mission": {
       id: "rescue-elena-mission",
-      text: "You explain how you fled to free him, how you heard her scream but continued on. King Aldric's face hardens.\n\n'Then we go get her. Now.' Despite his weakness, he radiates authority.\n\nYou race back through the castle together. You find Elena imprisoned in a shadow-binding, the doppelganger standing over her.\n\n'Welcome, Your Majesty,' the creature mocks. 'Come to surrender?'\n\nBut with the real king present, the doppelganger's power wavers. Together, you free Elena and banish the shadow creature.\n\nElena won't meet your eyes for days afterward. You saved the kingdom, but trust is broken. Some victories carry bitter costs.\n\nTHE END - Victory: The Weight of Choice",
+      text: "You explain how you fled to free him, how you heard her scream but continued on. King Aldric's face hardens.\n\n'Then we go get her. Now.' Despite his weakness, he radiates authority.\n\nYou race back through the castle together. You find Elena imprisoned in a shadow-binding, the doppelganger standing over her.\n\n'Welcome, Your Majesty,' the creature mocks. 'Come to surrender?'\n\nBut with the real king present, the doppelganger's power wavers. Together, you free Elena and banish the shadow creature.\n\nElena won't meet your eyes for days afterward. You saved the kingdom, but trust is broken. Some victories carry bitter costs.",
+      endingTitle: "Victory: The Weight of Choice",
       choices: [],
       isEnding: true,
     },
 
     "confession-ending": {
       id: "confession-ending",
-      text: "You confess everything—how you chose to save him over protecting her, how you heard her scream and kept running.\n\nKing Aldric listens in silence. Then: 'You made a tactical decision in an impossible situation. But my daughter paid the price.'\n\nTogether you return to find Elena captured by the doppelganger, used as leverage. You manage to free her and banish the creature, but the king's eyes hold disappointment.\n\nYou're granted no honors, no title. The kingdom is saved, but you'll always be the mage who left the princess to die. Some tactical decisions destroy more than they save.\n\nTHE END - Victory: The Tactical Failure",
+      text: "You confess everything—how you chose to save him over protecting her, how you heard her scream and kept running.\n\nKing Aldric listens in silence. Then: 'You made a tactical decision in an impossible situation. But my daughter paid the price.'\n\nTogether you return to find Elena captured by the doppelganger, used as leverage. You manage to free her and banish the creature, but the king's eyes hold disappointment.\n\nYou're granted no honors, no title. The kingdom is saved, but you'll always be the mage who left the princess to die. Some tactical decisions destroy more than they save.",
+      endingTitle: "Victory: The Tactical Failure",
       choices: [],
       isEnding: true,
     },
 
     "purging-blast": {
       id: "purging-blast",
-      text: "You channel every ounce of magical power into a massive purging blast of light. The shadow wraiths shriek and dissolve, freed from all five guards.\n\nBut the effort drains you completely. You collapse, powerless, as more shadow creatures pour in from throughout the castle.\n\nYour heroic effort saved five guards but cost you everything.\n\nTHE END - Defeat: Burned Out",
+      text: "You channel every ounce of magical power into a massive purging blast of light. The shadow wraiths shriek and dissolve, freed from all five guards.\n\nBut the effort drains you completely. You collapse, powerless, as more shadow creatures pour in from throughout the castle.\n\nYour heroic effort saved five guards but cost you everything.",
+      endingTitle: "Defeat: Burned Out",
       choices: [],
       isEnding: true,
     },
 
     "promise-return": {
       id: "promise-return",
-      text: "You promise King Aldric you'll return with the keys. You hide as guards pass, but without the keys, you have no way to free him.\n\nYou search for days, but the keys remain hidden. Eventually, you're discovered and captured.\n\nTHE END - Defeat: Lost Opportunity",
+      text: "You promise King Aldric you'll return with the keys. You hide as guards pass, but without the keys, you have no way to free him.\n\nYou search for days, but the keys remain hidden. Eventually, you're discovered and captured.",
+      endingTitle: "Defeat: Lost Opportunity",
       choices: [],
       isEnding: true,
     },
@@ -1066,21 +1099,24 @@ export const crystalThrone = {
 
     "rapid-unlock-attempt": {
       id: "rapid-unlock-attempt",
-      text: "You spin and place your hands on the locks, speaking frantically:\n\n'Service!' Crown clicks. 'Truth!' Heart opens. 'Change!' Flame shatters.\n\nThe door swings open and King Aldric stumbles out just as the doppelganger strikes. The creature's magic hits you, but the king is free.\n\nEven weakened, his presence disrupts the doppelganger's power. Together, you banish it.\n\nYou survive, though barely. The healers say you'll recover fully. King Aldric visits daily, calling you the bravest mage in the kingdom.\n\nTHE END - Victory: Split-Second Timing",
+      text: "You spin and place your hands on the locks, speaking frantically:\n\n'Service!' Crown clicks. 'Truth!' Heart opens. 'Change!' Flame shatters.\n\nThe door swings open and King Aldric stumbles out just as the doppelganger strikes. The creature's magic hits you, but the king is free.\n\nEven weakened, his presence disrupts the doppelganger's power. Together, you banish it.\n\nYou survive, though barely. The healers say you'll recover fully. King Aldric visits daily, calling you the bravest mage in the kingdom.",
+      endingTitle: "Victory: Split-Second Timing",
       choices: [],
       isEnding: true,
     },
 
     "desperate-combat": {
       id: "desperate-combat",
-      text: "You step between the doppelganger and the locked door, buying time for... you're not sure what. But you have to try.\n\nYou fight brilliantly, but you're outmatched. The doppelganger's power is overwhelming. You fall, and your last thought is at least you tried to protect the king.\n\nBehind the door, King Aldric hears your sacrifice. Somehow, impossibly, he gathers enough strength to break through the locks himself. He emerges and banishes the doppelganger, but you're gone.\n\nThe kingdom is saved, but at the cost of its youngest, bravest mage. A statue in your honor stands before the Crystal Throne.\n\nTHE END - Heroic Death: The Ultimate Price",
+      text: "You step between the doppelganger and the locked door, buying time for... you're not sure what. But you have to try.\n\nYou fight brilliantly, but you're outmatched. The doppelganger's power is overwhelming. You fall, and your last thought is at least you tried to protect the king.\n\nBehind the door, King Aldric hears your sacrifice. Somehow, impossibly, he gathers enough strength to break through the locks himself. He emerges and banishes the doppelganger, but you're gone.\n\nThe kingdom is saved, but at the cost of its youngest, bravest mage. A statue in your honor stands before the Crystal Throne.",
+      endingTitle: "Heroic Death: The Ultimate Price",
       choices: [],
       isEnding: true,
     },
 
     "drain-locks": {
       id: "drain-locks",
-      text: "You attempt to use yourself as a conduit to drain the magical locks, channeling their power through your body. The pain is excruciating—too much power flowing through you at once.\n\nThe locks begin to crack and break, but your body can't handle the strain. You manage to free the king, but at the cost of your own life.\n\nKing Aldric defeats the doppelganger and reclaims his throne. In the Crystal Hall, a statue is raised in your honor—the Young Mage who gave everything to save the kingdom.\n\nTHE END - Heroic Sacrifice: The Ultimate Price",
+      text: "You attempt to use yourself as a conduit to drain the magical locks, channeling their power through your body. The pain is excruciating—too much power flowing through you at once.\n\nThe locks begin to crack and break, but your body can't handle the strain. You manage to free the king, but at the cost of your own life.\n\nKing Aldric defeats the doppelganger and reclaims his throne. In the Crystal Hall, a statue is raised in your honor—the Young Mage who gave everything to save the kingdom.",
+      endingTitle: "Heroic Sacrifice: The Ultimate Price",
       choices: [],
       isEnding: true,
     },
@@ -1103,28 +1139,32 @@ export const crystalThrone = {
 
     "king-mage-alliance": {
       id: "king-mage-alliance",
-      text: "You stand shoulder to shoulder with King Aldric. Though he's weak from imprisonment, his presence alone makes the doppelganger's form flicker.\n\n'Together,' you say.\n\n'Together,' the king agrees.\n\nYou provide the magical power, he provides the royal authority and knowledge of banishment. Your combined assault catches the doppelganger off-guard—it expected you to be separated, vulnerable.\n\nBut together, you're unstoppable. The creature dissolves with a final scream, and throughout the castle, shadow wraiths dissipate.\n\nKing Aldric claps you on the shoulder. 'You saved my life and my kingdom. Name your reward.'\n\nTHE END - Victory: The King and the Mage",
+      text: "You stand shoulder to shoulder with King Aldric. Though he's weak from imprisonment, his presence alone makes the doppelganger's form flicker.\n\n'Together,' you say.\n\n'Together,' the king agrees.\n\nYou provide the magical power, he provides the royal authority and knowledge of banishment. Your combined assault catches the doppelganger off-guard—it expected you to be separated, vulnerable.\n\nBut together, you're unstoppable. The creature dissolves with a final scream, and throughout the castle, shadow wraiths dissipate.\n\nKing Aldric claps you on the shoulder. 'You saved my life and my kingdom. Name your reward.'",
+      endingTitle: "Victory: The King and the Mage",
       choices: [],
       isEnding: true,
     },
 
     "sacrifice-for-king": {
       id: "sacrifice-for-king",
-      text: "'Run!' you shout at the king. 'I'll hold them!'\n\nYou don't wait for his response. You unleash everything you have—fire, light, force—creating a wall of magic between the king and the shadows.\n\nYou hear the king's footsteps retreating. Good. At least he'll escape.\n\nThe doppelganger's magic overwhelms you. Your last thought is that Meredith would be proud—you gave everything for the kingdom.\n\nBut King Aldric doesn't run. He circles back with loyal guards he managed to free, and together they destroy the doppelganger. You wake days later in the royal infirmary, the kingdom's greatest hero.\n\nTHE END - Victory: The Noble Sacrifice",
+      text: "'Run!' you shout at the king. 'I'll hold them!'\n\nYou don't wait for his response. You unleash everything you have—fire, light, force—creating a wall of magic between the king and the shadows.\n\nYou hear the king's footsteps retreating. Good. At least he'll escape.\n\nThe doppelganger's magic overwhelms you. Your last thought is that Meredith would be proud—you gave everything for the kingdom.\n\nBut King Aldric doesn't run. He circles back with loyal guards he managed to free, and together they destroy the doppelganger. You wake days later in the royal infirmary, the kingdom's greatest hero.",
+      endingTitle: "Victory: The Noble Sacrifice",
       choices: [],
       isEnding: true,
     },
 
     "defend-attack": {
       id: "defend-attack",
-      text: "You raise a defensive shield against the doppelganger's assault. Your barrier holds, but you're locked in a stalemate—unable to free the king while defending yourself.\n\nThe doppelganger summons more shadow creatures. You're outnumbered and slowly overwhelmed.\n\nTHE END - Defeat: Defensive Failure",
+      text: "You raise a defensive shield against the doppelganger's assault. Your barrier holds, but you're locked in a stalemate—unable to free the king while defending yourself.\n\nThe doppelganger summons more shadow creatures. You're outnumbered and slowly overwhelmed.",
+      endingTitle: "Defeat: Defensive Failure",
       choices: [],
       isEnding: true,
     },
 
     "counter-magic": {
       id: "counter-magic",
-      text: "You counter the doppelganger's shadow magic with your own force spell. The two magics collide in a brilliant explosion that rocks the chamber.\n\nBut you're outmatched. The doppelganger is far more powerful, and your counter only delays the inevitable.\n\nTHE END - Defeat: Magical Duel Lost",
+      text: "You counter the doppelganger's shadow magic with your own force spell. The two magics collide in a brilliant explosion that rocks the chamber.\n\nBut you're outmatched. The doppelganger is far more powerful, and your counter only delays the inevitable.",
+      endingTitle: "Defeat: Magical Duel Lost",
       choices: [],
       isEnding: true,
     },
@@ -1147,14 +1187,16 @@ export const crystalThrone = {
 
     "rescue-through-rubble": {
       id: "rescue-through-rubble",
-      text: "You lunge through the damaged opening and grab King Aldric, hauling him out just as massive stones crash down where he was standing.\n\nThe passage collapses behind you as you flee. Dust chokes the air. You drag the weakened king up the stairs, through corridors, finally emerging into fresh air.\n\nThe doppelganger finds you there, but with the true king present, its power falters. A final banishment spell ends the threat forever.\n\nYou saved the king by inches. The prison is destroyed, but the kingdom is free.\n\nTHE END - Victory: Narrow Escape",
+      text: "You lunge through the damaged opening and grab King Aldric, hauling him out just as massive stones crash down where he was standing.\n\nThe passage collapses behind you as you flee. Dust chokes the air. You drag the weakened king up the stairs, through corridors, finally emerging into fresh air.\n\nThe doppelganger finds you there, but with the true king present, its power falters. A final banishment spell ends the threat forever.\n\nYou saved the king by inches. The prison is destroyed, but the kingdom is free.",
+      endingTitle: "Victory: Narrow Escape",
       choices: [],
       isEnding: true,
     },
 
     "hold-the-ceiling": {
       id: "hold-the-ceiling",
-      text: "You throw your hands up and channel every ounce of magic into holding the collapsing ceiling. Stone grinds against your magical barrier.\n\n'Get out!' you scream at the king through the damaged door.\n\nKing Aldric stumbles through the opening and keeps running. You hold the ceiling for ten more seconds, then twenty, then—\n\nYour power gives out. The ceiling crashes down.\n\nYou wake days later. Somehow, you survived. King Aldric tells you the doppelganger was banished, the kingdom saved. Your sacrifice bought just enough time.\n\nThe healers say you'll never fully recover your magical strength. But the king makes you Royal Advisor, Meredith's true successor.\n\nTHE END - Victory: The Cost of Heroism",
+      text: "You throw your hands up and channel every ounce of magic into holding the collapsing ceiling. Stone grinds against your magical barrier.\n\n'Get out!' you scream at the king through the damaged door.\n\nKing Aldric stumbles through the opening and keeps running. You hold the ceiling for ten more seconds, then twenty, then—\n\nYour power gives out. The ceiling crashes down.\n\nYou wake days later. Somehow, you survived. King Aldric tells you the doppelganger was banished, the kingdom saved. Your sacrifice bought just enough time.\n\nThe healers say you'll never fully recover your magical strength. But the king makes you Royal Advisor, Meredith's true successor.",
+      endingTitle: "Victory: The Cost of Heroism",
       choices: [],
       isEnding: true,
     },

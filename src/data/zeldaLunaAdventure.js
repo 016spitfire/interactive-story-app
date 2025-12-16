@@ -259,56 +259,65 @@ export const zeldaLunaAdventure = {
 
     "pepper-joins-team": {
       id: "pepper-joins-team",
-      text: "The next day at the Dessert Festival, Pepper wore a tiny apron that said 'Official Bakery Dragon' and stood proudly at the booth.\n\nWhen customers came by, he would sneeze gentle rainbows over the treats. The cookies and cupcakes sparkled with rainbow colors!\n\n'This is AMAZING!' people gasped. 'We've never seen anything like it!'\n\nKids lined up to meet Pepper. Nobody ran away - they all wanted to be his friend!\n\n'Zelda! Luna!' Pepper called out happily. 'Everyone loves the rainbow treats! And they love ME!'\n\nMeemaw smiled at her granddaughters. 'You girls did something very special today. You made a friend and saved the festival!'\n\nIt was the best Dessert Festival ever!\n\nTHE END - You found the best ending! Friendship and fun save the day!",
+      text: "The next day at the Dessert Festival, Pepper wore a tiny apron that said 'Official Bakery Dragon' and stood proudly at the booth.\n\nWhen customers came by, he would sneeze gentle rainbows over the treats. The cookies and cupcakes sparkled with rainbow colors!\n\n'This is AMAZING!' people gasped. 'We've never seen anything like it!'\n\nKids lined up to meet Pepper. Nobody ran away - they all wanted to be his friend!\n\n'Zelda! Luna!' Pepper called out happily. 'Everyone loves the rainbow treats! And they love ME!'\n\nMeemaw smiled at her granddaughters. 'You girls did something very special today. You made a friend and saved the festival!'\n\nIt was the best Dessert Festival ever!",
+      endingTitle:
+        "You found the best ending! Friendship and fun save the day!",
       choices: [],
       isEnding: true,
     },
 
     "festival-preparation": {
       id: "festival-preparation",
-      text: "That evening, Zelda, Luna, and Pepper worked together to prepare for the festival. Pepper practiced making rainbow art while the sisters baked treats.\n\nMeemaw was delighted. 'This is wonderful! We'll have the most magical booth at the festival!'\n\nThe next day, Pepper created beautiful rainbow designs that floated over the bakery booth. People came from all over to see!\n\n'It's like a dream!' children exclaimed.\n\nPepper beamed with pride. 'This is what my rainbow sneezes were meant for - making people happy!'\n\nThe festival was a huge success, and Pepper found his true calling as an artist!\n\nTHE END - Amazing! Art and friendship make the world beautiful!",
+      text: "That evening, Zelda, Luna, and Pepper worked together to prepare for the festival. Pepper practiced making rainbow art while the sisters baked treats.\n\nMeemaw was delighted. 'This is wonderful! We'll have the most magical booth at the festival!'\n\nThe next day, Pepper created beautiful rainbow designs that floated over the bakery booth. People came from all over to see!\n\n'It's like a dream!' children exclaimed.\n\nPepper beamed with pride. 'This is what my rainbow sneezes were meant for - making people happy!'\n\nThe festival was a huge success, and Pepper found his true calling as an artist!",
+      endingTitle: "Amazing! Art and friendship make the world beautiful!",
       choices: [],
       isEnding: true,
     },
 
     "amazing-festival": {
       id: "amazing-festival",
-      text: "The Dessert Festival was absolutely spectacular! Pepper's rainbow decorations sparkled everywhere, and the sisters' treats were arranged in beautiful displays.\n\nPeople couldn't decide what they loved more - the delicious food or the magical decorations!\n\n'This is the best festival we've ever had!' the mayor announced.\n\nPepper, Zelda, and Luna took a bow together. Working as a team, they had created something truly special.\n\nMeemaw hugged them all. 'I'm so proud of you! You showed that when friends work together, anything is possible!'\n\nPepper sneezed one final rainbow that spelled out 'BEST FRIENDS FOREVER!' in the sky.\n\nTHE END - Wonderful! Teamwork makes the dream work!",
+      text: "The Dessert Festival was absolutely spectacular! Pepper's rainbow decorations sparkled everywhere, and the sisters' treats were arranged in beautiful displays.\n\nPeople couldn't decide what they loved more - the delicious food or the magical decorations!\n\n'This is the best festival we've ever had!' the mayor announced.\n\nPepper, Zelda, and Luna took a bow together. Working as a team, they had created something truly special.\n\nMeemaw hugged them all. 'I'm so proud of you! You showed that when friends work together, anything is possible!'\n\nPepper sneezed one final rainbow that spelled out 'BEST FRIENDS FOREVER!' in the sky.",
+      endingTitle: "Wonderful! Teamwork makes the dream work!",
       choices: [],
       isEnding: true,
     },
 
     "pepper-bakery-helper": {
       id: "pepper-bakery-helper",
-      text: "Pepper became the bakery's most enthusiastic helper! At the Dessert Festival, he greeted every customer with a smile and a gentle rainbow sneeze that made all the treats sparkle.\n\n'Welcome to the Magical Bakery!' he would say, and his joy was so contagious that everyone smiled.\n\nThe booth was mobbed with happy customers. Kids wanted Pepper's autograph, and adults said it was the most delightful festival they'd ever attended.\n\n'I finally found where I belong!' Pepper told the sisters, his eyes shining with happiness.\n\nMeemaw patted his little dragon head. 'You were always special, Pepper. Now everyone else gets to see it too!'\n\nTHE END - Perfect! Kindness and acceptance win the day!",
+      text: "Pepper became the bakery's most enthusiastic helper! At the Dessert Festival, he greeted every customer with a smile and a gentle rainbow sneeze that made all the treats sparkle.\n\n'Welcome to the Magical Bakery!' he would say, and his joy was so contagious that everyone smiled.\n\nThe booth was mobbed with happy customers. Kids wanted Pepper's autograph, and adults said it was the most delightful festival they'd ever attended.\n\n'I finally found where I belong!' Pepper told the sisters, his eyes shining with happiness.\n\nMeemaw patted his little dragon head. 'You were always special, Pepper. Now everyone else gets to see it too!'",
+      endingTitle: "Perfect! Kindness and acceptance win the day!",
       choices: [],
       isEnding: true,
     },
 
     "pepper-gets-ready": {
       id: "pepper-gets-ready",
-      text: "Back at the bakery, Meemaw helped make Pepper the cutest little apron and chef hat. They were purple with rainbow stitching!\n\nPepper put them on and looked at himself in the mirror. 'I look... professional!' he said proudly.\n\nThe sisters taught him how to arrange cookies on plates and how to greet customers. He was a natural!\n\nAt the festival the next day, Pepper was the star of the show. His outfit was adorable, his manners were perfect, and his rainbow sneezes made everything magical.\n\n'Best. Job. EVER!' Pepper declared, giving the sisters high-fives (which is tricky with little dragon claws, but they managed!).\n\nThe bakery's booth won first prize, and Pepper got a special medal for 'Most Magical Helper'!\n\nTHE END - Fantastic! Everyone wins when you work together!",
+      text: "Back at the bakery, Meemaw helped make Pepper the cutest little apron and chef hat. They were purple with rainbow stitching!\n\nPepper put them on and looked at himself in the mirror. 'I look... professional!' he said proudly.\n\nThe sisters taught him how to arrange cookies on plates and how to greet customers. He was a natural!\n\nAt the festival the next day, Pepper was the star of the show. His outfit was adorable, his manners were perfect, and his rainbow sneezes made everything magical.\n\n'Best. Job. EVER!' Pepper declared, giving the sisters high-fives (which is tricky with little dragon claws, but they managed!).\n\nThe bakery's booth won first prize, and Pepper got a special medal for 'Most Magical Helper'!",
+      endingTitle: "Fantastic! Everyone wins when you work together!",
       choices: [],
       isEnding: true,
     },
 
     "festival-with-pepper": {
       id: "festival-with-pepper",
-      text: "At the festival, Pepper wore his friendship bracelet proudly and helped the sisters in every way he could. He greeted customers, arranged treats, and created rainbow sparkle displays.\n\nEveryone fell in love with the friendly little dragon. Children asked for rainbow blessings, and Pepper happily gave gentle sneezes that made them giggle.\n\n'You know what?' Pepper said at the end of the day. 'I used to think my rainbow sneezes were a problem. But you helped me see they're a gift!'\n\nLuna hugged him. 'And you're a gift to us, Pepper!'\n\nMeemaw brought out a special cake shaped like a dragon. 'To celebrate our new family member!'\n\nPepper's happy tears sparkled like tiny diamonds. He had found his forever home.\n\nTHE END - Heartwarming! Gifts from the heart make the best friends!",
+      text: "At the festival, Pepper wore his friendship bracelet proudly and helped the sisters in every way he could. He greeted customers, arranged treats, and created rainbow sparkle displays.\n\nEveryone fell in love with the friendly little dragon. Children asked for rainbow blessings, and Pepper happily gave gentle sneezes that made them giggle.\n\n'You know what?' Pepper said at the end of the day. 'I used to think my rainbow sneezes were a problem. But you helped me see they're a gift!'\n\nLuna hugged him. 'And you're a gift to us, Pepper!'\n\nMeemaw brought out a special cake shaped like a dragon. 'To celebrate our new family member!'\n\nPepper's happy tears sparkled like tiny diamonds. He had found his forever home.",
+      endingTitle: "Heartwarming! Gifts from the heart make the best friends!",
       choices: [],
       isEnding: true,
     },
 
     "picnic-ending": {
       id: "picnic-ending",
-      text: "The picnic turned into a party! More kids from the neighborhood came to join, and Pepper made rainbow designs in the sky for everyone.\n\nWord spread quickly about the friendly dragon at the park. By evening, the mayor came to see what all the excitement was about.\n\n'Pepper,' the mayor said, 'would you like to be our town's Official Rainbow Artist?'\n\nPepper almost fainted with joy! 'REALLY?!'\n\nAt the festival the next day, Pepper had his own booth where he created custom rainbow art for everyone. The sisters' bakery booth was right next to him, and they worked together all day.\n\nIt was the beginning of a beautiful friendship - and the most successful festival the town had ever seen!\n\nTHE END - Wonderful! Sharing and caring make everything better!",
+      text: "The picnic turned into a party! More kids from the neighborhood came to join, and Pepper made rainbow designs in the sky for everyone.\n\nWord spread quickly about the friendly dragon at the park. By evening, the mayor came to see what all the excitement was about.\n\n'Pepper,' the mayor said, 'would you like to be our town's Official Rainbow Artist?'\n\nPepper almost fainted with joy! 'REALLY?!'\n\nAt the festival the next day, Pepper had his own booth where he created custom rainbow art for everyone. The sisters' bakery booth was right next to him, and they worked together all day.\n\nIt was the beginning of a beautiful friendship - and the most successful festival the town had ever seen!",
+      endingTitle: "Wonderful! Sharing and caring make everything better!",
       choices: [],
       isEnding: true,
     },
 
     "pepper-festival-prep": {
       id: "pepper-festival-prep",
-      text: "That evening, Pepper helped the sisters prepare all the treats for the festival. He was so excited he kept sneezing little rainbows that made the cookies glow!\n\n'Oops! Sorry!' he'd say, but the sisters just laughed.\n\n'Don't be sorry - these are the prettiest cookies ever!' Zelda said.\n\nMeemaw agreed. 'Pepper, your rainbow magic makes everything special!'\n\nAt the festival, their booth was magical! The treats sparkled, Pepper entertained everyone with rainbow shows, and the line of customers went around the block.\n\n'We make a great team!' the three friends said together, doing a group hug (which is hilarious when one of you is a small dragon).\n\nThe town declared it the Best Dessert Festival Ever, and Pepper became a beloved member of the community!\n\nTHE END - Brilliant! You baked your way to victory and friendship!",
+      text: "That evening, Pepper helped the sisters prepare all the treats for the festival. He was so excited he kept sneezing little rainbows that made the cookies glow!\n\n'Oops! Sorry!' he'd say, but the sisters just laughed.\n\n'Don't be sorry - these are the prettiest cookies ever!' Zelda said.\n\nMeemaw agreed. 'Pepper, your rainbow magic makes everything special!'\n\nAt the festival, their booth was magical! The treats sparkled, Pepper entertained everyone with rainbow shows, and the line of customers went around the block.\n\n'We make a great team!' the three friends said together, doing a group hug (which is hilarious when one of you is a small dragon).\n\nThe town declared it the Best Dessert Festival Ever, and Pepper became a beloved member of the community!",
+      endingTitle: "Brilliant! You baked your way to victory and friendship!",
       choices: [],
       isEnding: true,
     },

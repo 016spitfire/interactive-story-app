@@ -9,9 +9,28 @@ import { CATEGORIES, AVAILABLE_TAGS } from "../data/tags";
 import { stories } from "../data/stories";
 import "./Sidebar.css";
 
-function Sidebar({ isOpen, onClose, onFilterChange, currentFilters }) {
+function Sidebar({
+  isOpen: sidebarIsOpen,
+  onClose,
+  onFilterChange,
+  currentFilters,
+}) {
   const [selectedTags, setSelectedTags] = useState(currentFilters.tags || []);
+  const [openSections, setOpenSections] = useState(["categories", "series"]);
   const allSeries = selectAllSeries();
+
+  // Toggle accordion section
+  const toggleSection = (section) => {
+    setOpenSections(
+      (prev) =>
+        prev.includes(section)
+          ? prev.filter((s) => s !== section) // Close it
+          : [...prev, section], // Open it
+    );
+  };
+
+  // Check if a section is open
+  const isOpen = (section) => openSections.includes(section);
 
   // Filter categories to only show those with stories
   const availableCategories = useMemo(() => {
@@ -77,10 +96,10 @@ function Sidebar({ isOpen, onClose, onFilterChange, currentFilters }) {
   return (
     <>
       {/* Overlay for mobile */}
-      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
+      {sidebarIsOpen && <div className="sidebar-overlay" onClick={onClose} />}
 
       {/* Sidebar */}
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+      <aside className={`sidebar ${sidebarIsOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <h2>Filters & Navigation</h2>
           <button
@@ -95,104 +114,164 @@ function Sidebar({ isOpen, onClose, onFilterChange, currentFilters }) {
         <div className="sidebar-content">
           {/* Categories Section */}
           <section className="sidebar-section">
-            <h3>📚 Categories</h3>
-            <ul className="sidebar-list">
-              {availableCategories.map((cat) => (
-                <li key={cat.id}>
-                  <button
-                    className={`sidebar-button ${
-                      currentFilters.category === cat.id ? "active" : ""
-                    }`}
-                    onClick={() => handleCategoryClick(cat.id)}
-                  >
-                    {cat.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <button
+              className="section-header"
+              onClick={() => toggleSection("categories")}
+              aria-expanded={isOpen("categories")}
+            >
+              <h3>📚 Categories</h3>
+              <span className="accordion-icon">
+                {isOpen("categories") ? "▼" : "▶"}
+              </span>
+            </button>
+
+            {isOpen("categories") && (
+              <ul className="sidebar-list">
+                {availableCategories.map((cat) => (
+                  <li key={cat.id}>
+                    <button
+                      className={`sidebar-button ${
+                        currentFilters.category === cat.id ? "active" : ""
+                      }`}
+                      onClick={() => handleCategoryClick(cat.id)}
+                    >
+                      {cat.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </section>
 
           {/* Series Section */}
           <section className="sidebar-section">
-            <h3>📖 Series</h3>
-            <ul className="sidebar-list">
-              {allSeries.map((series) => (
-                <SeriesItem
-                  key={series.id}
-                  series={series}
-                  isActive={currentFilters.series === series.id}
-                  onClick={() => handleSeriesClick(series.id)}
-                />
-              ))}
-            </ul>
+            <button
+              className="section-header"
+              onClick={() => toggleSection("series")}
+              aria-expanded={isOpen("series")}
+            >
+              <h3>📖 Series</h3>
+              <span className="accordion-icon">
+                {isOpen("series") ? "▼" : "▶"}
+              </span>
+            </button>
+
+            {isOpen("series") && (
+              <ul className="sidebar-list">
+                {allSeries.map((series) => (
+                  <SeriesItem
+                    key={series.id}
+                    series={series}
+                    isActive={currentFilters.series === series.id}
+                    onClick={() => handleSeriesClick(series.id)}
+                  />
+                ))}
+              </ul>
+            )}
           </section>
 
           {/* Favorites Section */}
           <section className="sidebar-section">
-            <h3>⭐ Favorites</h3>
             <button
-              className={`sidebar-button ${
-                currentFilters.starredOnly ? "active" : ""
-              }`}
-              onClick={handleStarredClick}
+              className="section-header"
+              onClick={() => toggleSection("favorites")}
+              aria-expanded={isOpen("favorites")}
             >
-              Show Starred Stories
+              <h3>⭐ Favorites</h3>
+              <span className="accordion-icon">
+                {isOpen("favorites") ? "▼" : "▶"}
+              </span>
             </button>
+
+            {isOpen("favorites") && (
+              <button
+                className={`sidebar-button ${
+                  currentFilters.starredOnly ? "active" : ""
+                }`}
+                onClick={handleStarredClick}
+              >
+                Show Starred Stories
+              </button>
+            )}
           </section>
 
           {/* Tags Section */}
           <section className="sidebar-section">
-            <h3>🏷️ Filter by Tags</h3>
-            <div className="tag-list">
-              {availableTags.map((tag) => (
-                <button
-                  key={tag}
-                  className={`tag-button ${
-                    selectedTags.includes(tag) ? "active" : ""
-                  }`}
-                  onClick={() => handleTagToggle(tag)}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+            <button
+              className="section-header"
+              onClick={() => toggleSection("tags")}
+              aria-expanded={isOpen("tags")}
+            >
+              <h3>🏷️ Filter by Tags</h3>
+              <span className="accordion-icon">
+                {isOpen("tags") ? "▼" : "▶"}
+              </span>
+            </button>
+
+            {isOpen("tags") && (
+              <div className="tag-list">
+                {availableTags.map((tag) => (
+                  <button
+                    key={tag}
+                    className={`tag-button ${
+                      selectedTags.includes(tag) ? "active" : ""
+                    }`}
+                    onClick={() => handleTagToggle(tag)}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            )}
           </section>
 
           {/* Sort Section */}
           <section className="sidebar-section">
-            <h3>📊 Sort By</h3>
-            <ul className="sidebar-list">
-              <li>
-                <button
-                  className={`sidebar-button ${
-                    currentFilters.sortBy === "title" ? "active" : ""
-                  }`}
-                  onClick={() => handleSortChange("title")}
-                >
-                  Title
-                </button>
-              </li>
-              <li>
-                <button
-                  className={`sidebar-button ${
-                    currentFilters.sortBy === "difficulty" ? "active" : ""
-                  }`}
-                  onClick={() => handleSortChange("difficulty")}
-                >
-                  Difficulty
-                </button>
-              </li>
-              <li>
-                <button
-                  className={`sidebar-button ${
-                    currentFilters.sortBy === "seriesOrder" ? "active" : ""
-                  }`}
-                  onClick={() => handleSortChange("seriesOrder")}
-                >
-                  Series Order
-                </button>
-              </li>
-            </ul>
+            <button
+              className="section-header"
+              onClick={() => toggleSection("sort")}
+              aria-expanded={isOpen("sort")}
+            >
+              <h3>📊 Sort By</h3>
+              <span className="accordion-icon">
+                {isOpen("sort") ? "▼" : "▶"}
+              </span>
+            </button>
+
+            {isOpen("sort") && (
+              <ul className="sidebar-list">
+                <li>
+                  <button
+                    className={`sidebar-button ${
+                      currentFilters.sortBy === "title" ? "active" : ""
+                    }`}
+                    onClick={() => handleSortChange("title")}
+                  >
+                    Title
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className={`sidebar-button ${
+                      currentFilters.sortBy === "difficulty" ? "active" : ""
+                    }`}
+                    onClick={() => handleSortChange("difficulty")}
+                  >
+                    Difficulty
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className={`sidebar-button ${
+                      currentFilters.sortBy === "seriesOrder" ? "active" : ""
+                    }`}
+                    onClick={() => handleSortChange("seriesOrder")}
+                  >
+                    Series Order
+                  </button>
+                </li>
+              </ul>
+            )}
           </section>
 
           {/* Clear Filters */}

@@ -6,24 +6,24 @@ export function validateStory(story) {
 
   // Check basic story structure
   if (!story) {
-    errors.push('Story object is null or undefined');
+    errors.push("Story object is null or undefined");
     return { isValid: false, errors };
   }
 
   if (!story.storyId) {
-    errors.push('Story is missing storyId');
+    errors.push("Story is missing storyId");
   }
 
   if (!story.title) {
-    errors.push('Story is missing title');
+    errors.push("Story is missing title");
   }
 
   if (!story.startNode) {
-    errors.push('Story is missing startNode');
+    errors.push("Story is missing startNode");
   }
 
-  if (!story.nodes || typeof story.nodes !== 'object') {
-    errors.push('Story is missing nodes object');
+  if (!story.nodes || typeof story.nodes !== "object") {
+    errors.push("Story is missing nodes object");
     return { isValid: false, errors };
   }
 
@@ -52,12 +52,23 @@ export function validateStory(story) {
       errors.push(`Node "${nodeId}" is missing isEnding field`);
     }
 
+    // Check ending nodes have endingTitle
+    if (node.isEnding && !node.endingTitle) {
+      errors.push(
+        `Node "${nodeId}" is an ending but missing endingTitle field`,
+      );
+    }
+
     // Check choices if not an ending
     if (!node.isEnding) {
       if (!node.choices || !Array.isArray(node.choices)) {
-        errors.push(`Node "${nodeId}" is not an ending but has no choices array`);
+        errors.push(
+          `Node "${nodeId}" is not an ending but has no choices array`,
+        );
       } else if (node.choices.length === 0) {
-        errors.push(`Node "${nodeId}" is not an ending but has empty choices array`);
+        errors.push(
+          `Node "${nodeId}" is not an ending but has empty choices array`,
+        );
       } else {
         // Validate each choice
         node.choices.forEach((choice, index) => {
@@ -65,7 +76,9 @@ export function validateStory(story) {
             errors.push(`Node "${nodeId}" choice ${index} is missing text`);
           }
           if (!choice.next) {
-            errors.push(`Node "${nodeId}" choice ${index} is missing next node reference`);
+            errors.push(
+              `Node "${nodeId}" choice ${index} is missing next node reference`,
+            );
           } else {
             referencedNodes.add(choice.next);
           }
@@ -106,7 +119,7 @@ export function validateStory(story) {
 
   const unreachableNodes = nodeIds.filter((id) => !reachableNodes.has(id));
   if (unreachableNodes.length > 0) {
-    errors.push(`Unreachable nodes found: ${unreachableNodes.join(', ')}`);
+    errors.push(`Unreachable nodes found: ${unreachableNodes.join(", ")}`);
   }
 
   return {
@@ -146,7 +159,7 @@ export function validateStories(stories) {
   if (!Array.isArray(stories)) {
     return {
       isValid: false,
-      errors: ['Stories is not an array'],
+      errors: ["Stories is not an array"],
       results: [],
     };
   }
